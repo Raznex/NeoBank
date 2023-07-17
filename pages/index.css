@@ -1,0 +1,15 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/fonts.css);
+/*page*/
+@import url(../components/Page/Page.css);
+/*header*/
+@import url(../components/Header/Header.css);
+/*main*/
+@import url(../components/Content/Content.css);
+@import url(../components/ChooseCard/ChooseCard.css);
+@import url(../components/Advantage/Advantage.css);
+@import URL(../components/Rate/Rate.css);
+@import URL(../components/Map/Map.css);
+@import URL(../components/Subscribe/Subscribe.css);
+/*footer*/
+@import URL(../components/Footer/Footer.css);
