@@ -98,26 +98,17 @@
   </section>
   <section class="news">
     <h2 class="news__title">Current news from the world of finance</h2>
-    <p class="news__subtitle">We update the news feed every 15 minutes. You can learn more by clicking on the&nbsp;news you
-      are&nbsp;interested&nbsp;in.
+    <p class="news__subtitle">We&nbsp;update the news feed every 15&nbsp;minutes. You can learn more by&nbsp;clicking on&nbsp;the
+      news you
+      are interested&nbsp;in.
     </p>
     <div class="news__cards">
-      <article class="news__card">
-        <img src="../src/common/assets/images/demo1.png" alt="demo" class="news__card-image">
-        <p class="news__card-title">
-          Ethereum just pulled off its
-          final test run ahead of one
-          of the most important
-          events in crypto - CN
-        </p>
-        <p class="news__card-text">
-          Ethereum is moving closer to
-          adopting a proof-of-stake model
-          for its network, which is less
-          energy i
-        </p>
-      </article>
-      </article>
+      <div class="news__card-container" id="newsContainer">
+      </div>
+    </div>
+    <div class="news__container-button">
+      <button class="news__button news__button_previous news__button_previous_disable" disabled></button>
+      <button class="news__button news__button_next"></button>
     </div>
   </section>
   <section class="subscribe">
@@ -164,21 +155,15 @@
   </div>
 </footer>
 <template id="card-add">
-  <article class="element">
-    <div class="element__photocard">
-      <img src="#" alt="" class="element__image">
-      <button name='popup-Card-delete' class="element__delete-button">
-      </button>
-    </div>
-    <div class="element__vote">
-      <h2 class="element__title"></h2>
-      <div class="element__like">
-        <button type="button" class="element__like-button">
-        </button>
-        <p class="element__counter">0</p>
-      </div>
-    </div>
+  <article class="news__card">
+    <img src="../src/common/assets/images/demo1.png" alt="" class="news__card-image">
+    <p class="news__card-title">
+    </p>
+    <p class="news__card-text">
+    </p>
   </article>
 </template>
+<script src="../src/common/Modules/Module-2/components/slider.js" type="module"></script>
+<script src="../src/common/Modules/Module-2/app.js" type="module"></script>
 </body>
 </html>
