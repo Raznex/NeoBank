@@ -24,11 +24,7 @@ class GetNewsApi {
 }
 
 const getNewsApi = new GetNewsApi({
-  // url: "https://newsapi.org/v2/everything?q=keyword&apiKey=e3f179be39aa49c4b4320b572a2744a8",
-  url: "https://api.nomoreparties.co/beatfilm-movies",
-  headers: {
-    "Content-Type": "application/json",
-  },
+  url: "https://newsapi.org/v2/everything?q=keyword&apiKey=e3f179be39aa49c4b4320b572a2744a8",
 });
 
 

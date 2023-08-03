@@ -483,7 +483,7 @@
     display: flex;
     flex-flow: row wrap;
     gap: 32px 28px;
-    max-width: 409px; }
+    max-width: 470px; }
   .rate__currency {
     color: #808080;
     font-size: 20px;
@@ -491,6 +491,7 @@
     font-weight: 700;
     line-height: 22px;
     letter-spacing: 0.4px;
+    width: 135px;
     margin: 0; }
   .rate__currency_span {
     color: #000;
@@ -540,7 +541,8 @@
     font-size: 14px;
     line-height: 25px; }
   .rate__container {
-    gap: 24px; } }
+    gap: 24px;
+    max-width: 320px; } }
 @media screen and (max-width: 500px) {
   .rate {
     flex-direction: column;

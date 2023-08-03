@@ -4,8 +4,6 @@ const slideContainer = document.querySelector(".news__cards");
 const buttonNext = document.querySelector(".news__button_next");
 const buttonPrevious = document.querySelector(".news__button_previous");
 
-console.log(slideContainer.offsetWidth)
-
 function moveRight () {
   offset -= 400;
   slide.style.left = offset + "px";

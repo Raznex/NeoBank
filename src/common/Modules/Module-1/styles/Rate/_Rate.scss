@@ -38,7 +38,7 @@
     display: flex;
     flex-flow: row wrap;
     gap: 32px 28px;
-    max-width: 409px;
+    max-width: 470px;
   }
 
   &__currency {
@@ -48,6 +48,7 @@
     font-weight: 700;
     line-height: 22px;
     letter-spacing: 0.4px;
+    width: 135px;
     margin: 0;
   }
 
@@ -120,6 +121,7 @@
 
    &__container {
      gap: 24px;
+     max-width: 320px;
    }
  }
 }

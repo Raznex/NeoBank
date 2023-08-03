@@ -77,12 +77,12 @@
       <h2 class="rate__title">Exchange rate in&nbsp;internet bank</h2>
       <p class="rate__name">Currency</p>
       <div class="rate__container">
-        <p class="rate__currency">USD: <span class="rate__currency rate__currency_span">60.78</span></p>
-        <p class="rate__currency">CNY: <span class="rate__currency rate__currency_span">9.08</span></p>
-        <p class="rate__currency">CHF: <span class="rate__currency rate__currency_span">64.78</span></p>
-        <p class="rate__currency">USD: <span class="rate__currency rate__currency_span">60.78</span></p>
-        <p class="rate__currency">JPY: <span class="rate__currency rate__currency_span">0.46</span></p>
-        <p class="rate__currency">TRY: <span class="rate__currency rate__currency_span">3.39</span></p>
+        <p class="rate__currency">USD: <span class="rate__currency rate__currency_span" id="rateUSD">60.78</span></p>
+        <p class="rate__currency">EUR: <span class="rate__currency rate__currency_span" id="rateEUR">9.08</span></p>
+        <p class="rate__currency">SGD: <span class="rate__currency rate__currency_span" id="rateSGD">64.78</span></p>
+        <p class="rate__currency">JPY: <span class="rate__currency rate__currency_span" id="rateJPY">60.78</span></p>
+        <p class="rate__currency">CAD: <span class="rate__currency rate__currency_span" id="rateCAD">0.46</span></p>
+        <p class="rate__currency">NZD: <span class="rate__currency rate__currency_span" id="rateNZD">3.39</span></p>
       </div>
       <a href="#" target="_blank" class="rate__link">All courses</a>
     </div>
@@ -156,7 +156,9 @@
 </footer>
 <template id="card-add">
   <article class="news__card">
-    <img src="../src/common/assets/images/demo1.png" alt="" class="news__card-image">
+    <a href="#" target="_blank" class="news__card-link">
+    <img src="../src/common/assets/images/demo1.png" alt="alt" class="news__card-image">
+    </a>
     <p class="news__card-title">
     </p>
     <p class="news__card-text">
