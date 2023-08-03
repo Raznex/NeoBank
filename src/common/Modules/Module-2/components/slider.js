@@ -4,7 +4,7 @@ const slideContainer = document.querySelector(".news__cards");
 const buttonNext = document.querySelector(".news__button_next");
 const buttonPrevious = document.querySelector(".news__button_previous");
 
-function moveRight () {
+function moveRight() {
   offset -= 400;
   slide.style.left = offset + "px";
   buttonDisable();
@@ -12,7 +12,7 @@ function moveRight () {
 }
 
 
-function moveLeft () {
+function moveLeft() {
   offset += 400;
   slide.style.left = offset + "px";
   buttonDisable();
@@ -35,8 +35,9 @@ function buttonDisable() {
     buttonNext.disabled = false;
   }
 }
+
 buttonPrevious.addEventListener('click', moveLeft);
-buttonNext.addEventListener('click',  moveRight);
+buttonNext.addEventListener('click', moveRight);
 
 
 
