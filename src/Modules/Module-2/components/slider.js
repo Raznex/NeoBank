@@ -1,6 +1,5 @@
 let offset = 0; //Положение от левого края
 const slide = document.querySelector(".news__card-container");
-const slideContainer = document.querySelector(".news__cards");
 const buttonNext = document.querySelector(".news__button_next");
 const buttonPrevious = document.querySelector(".news__button_previous");
 
@@ -8,7 +7,6 @@ function moveRight() {
   offset -= 400;
   slide.style.left = offset + "px";
   buttonDisable();
-  console.log(slide.childElementCount)
 }
 
 

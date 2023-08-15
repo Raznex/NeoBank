@@ -1,17 +1,17 @@
-import getNewsApi from "../../assets/utils/GetNewsApi.js";
-import getChangeApi from "../../assets/utils/GetChangeValue.js";
+import getNewsApi from "./Api/GetNewsApi.js";
+import getChangeApi from "./Api/GetChangeValue.js";
 import {
   currencyPairs,
   intervalMilliseconds,
   template,
   newsContainer,
   currencyElements,
-} from "../../assets/utils/Constants.js";
+} from "../../common/assets/utils/Constants.js";
 
 //Рендер одной карточки с новостями
 function renderCard(data) {
-  if (!data.urlToImage || hasMarkup(data.description)) {
-    return null;
+  if (hasMarkup(data.description) || !data.urlToImage) {
+      return null;
   }
   const newsCard = template.content.querySelector('.news__card').cloneNode(true);
   const imageElement = newsCard.querySelector(".news__card-image");
