@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="html, scss">
+  <meta name="author" content="Andrey Burkovetskii">
+  <link rel="stylesheet" href="../src/layout/index.css">
+  <title>NeoBank</title>
+</head>
+<body class="page">
+<header class="header">
+  <div class="header__container">
+    <p class="header__logo">NeoBank</p>
+    <nav>
+      <ul class="header__links">
+        <li><a href="#" target="_blank" class="header__link">Credit card</a></li>
+        <li><a href="#" target="_blank" class="header__link">Product</a></li>
+        <li><a href="#" target="_blank" class="header__link">Account</a></li>
+        <li><a href="#" target="_blank" class="header__link">Resources</a></li>
+      </ul>
+    </nav>
+    <button class="header__button">Online Bank</button>
+    <nav class="header__dropdown">
+      <button class="header__drop-button"></button>
+      <ul class="header__dropdown-content">
+        <button class="header__button header__button_burger">Online Bank</button>
+        <li><a href="#" target="_blank" class="header__link">Credit card</a></li>
+        <li><a href="#" target="_blank" class="header__link">Product</a></li>
+        <li><a href="#" target="_blank" class="header__link">Account</a></li>
+        <li><a href="#" target="_blank" class="header__link">Resources</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main class="content">
+  <section class="choose-card">
+    <div class="choose-card__description">
+      <h1 class="choose-card__title">Choose the design you like and apply for card right now</h1>
+      <button class="choose-card__button">Choose the card</button>
+    </div>
+    <div class="choose-card__container">
+      <img src="../src/common/assets/images/cardImage1%201.png" alt="bank-card" class="choose-card__card">
+      <img src="../src/common/assets/images/cardImage2%201.png" alt="bank-card" class="choose-card__card">
+      <img src="../src/common/assets/images/cardImage3%201.png" alt="bank-card" class="choose-card__card">
+      <img src="../src/common/assets/images/cardImage4%201.png" alt="bank-card" class="choose-card__card">
+    </div>
+  </section>
+  <section class="advantage">
+    <img src="../src/common/assets/icon/advantage__illustration.svg" alt="Man" class="advantage__image">
+    <div class="advantage__container">
+      <h2 class="advantage__title">We Provide Many Features You&nbsp;Can&nbsp;Use</h2>
+      <p class="advantage__description">You can explore the features that we provide with fun and have their own
+        functions each feature</p>
+      <ul class="advantage__list">
+        <li class="advantage__list-container">
+          <img src="../src/common/assets/icon/advantage__mark.svg" alt="mark" class="advantage__mark">
+          <p class="advantage__privilege">Powerfull online protection.</p>
+        </li>
+        <li class="advantage__list-container">
+          <img src="../src/common/assets/icon/advantage__mark.svg" alt="mark" class="advantage__mark">
+          <p class="advantage__privilege">Cashback without borders.</p>
+        </li>
+        <li class="advantage__list-container">
+          <img src="../src/common/assets/icon/advantage__mark.svg" alt="mark" class="advantage__mark">
+          <p class="advantage__privilege">Personal design</p>
+        </li>
+        <li class="advantage__list-container">
+          <img src="../src/common/assets/icon/advantage__mark.svg" alt="mark" class="advantage__mark">
+          <p class="advantage__privilege">Work anywhere in the world</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="rate">
+    <div class="rate__info">
+      <h2 class="rate__title">Exchange rate in&nbsp;internet bank</h2>
+      <p class="rate__name">Currency</p>
+      <div class="rate__container">
+        <p class="rate__currency">USD: <span class="rate__currency rate__currency_span" id="rateUSD">60.78</span></p>
+        <p class="rate__currency">EUR: <span class="rate__currency rate__currency_span" id="rateEUR">9.08</span></p>
+        <p class="rate__currency">SGD: <span class="rate__currency rate__currency_span" id="rateSGD">64.78</span></p>
+        <p class="rate__currency">JPY: <span class="rate__currency rate__currency_span" id="rateJPY">60.78</span></p>
+        <p class="rate__currency">CAD: <span class="rate__currency rate__currency_span" id="rateCAD">0.46</span></p>
+        <p class="rate__currency">NZD: <span class="rate__currency rate__currency_span" id="rateNZD">3.39</span></p>
+      </div>
+      <a href="#" target="_blank" class="rate__link">All courses</a>
+    </div>
+    <div class="rate__renewal">
+      <p class="rate__time">Update every 15&nbsp;minutes, MSC&nbsp;09.08.2022</p>
+      <img src="../src/common/assets/icon/burse.svg" alt="" class="rate__exchange">
+    </div>
+  </section>
+  <section class="map">
+    <h2 class="map__title">You can use our services anywhere in&nbsp;the&nbsp;world</h2>
+    <p class="map__offer">Withdraw and transfer money online through our application</p>
+    <img src="../src/common/assets/icon/Map__global.svg" alt="" class="map__global">
+  </section>
+  <section class="news">
+    <h2 class="news__title">Current news from the world of finance</h2>
+    <p class="news__subtitle">We&nbsp;update the news feed every 15&nbsp;minutes. You can learn more by&nbsp;clicking on&nbsp;the
+      news you
+      are interested&nbsp;in.
+    </p>
+    <div class="news__cards">
+      <div class="news__card-container" id="newsContainer">
+      </div>
+    </div>
+    <div class="news__container-button">
+      <button class="news__button news__button_previous news__button_previous_disable" disabled></button>
+      <button class="news__button news__button_next"></button>
+    </div>
+  </section>
+  <section class="subscribe">
+    <a href="#" target="_blank" class="subscribe__support">Support</a>
+    <a href="#" target="_blank" class="subscribe__get">Subscribe Newsletter&nbsp;&&nbsp;get</a>
+    <a href="#" target="_blank" class="subscribe__news">Bank News</a>
+    <form action="" class="subscribe__form">
+      <img src="../src/common/assets/icon/letter.svg" alt="letter" class="subscribe__letter">
+      <input type="email" class="subscribe__input" aria-label="Enter your email to subscribe to news"
+             placeholder="Your email">
+      <button class="subscribe__submit subscribe__submit_little">
+        <img src="../src/common/assets/icon/send.svg" alt="Send" class="subscribe__send">
+        <p class="subscribe__button-text">Subscribe</p>
+      </button>
+    </form>
+  </section>
+</main>
+<footer class="footer">
+  <div class="footer__container">
+    <div class="footer__head">
+      <img src="../src/common/assets/images/logo_neoflex.png" alt="Logo" class="footer__logo">
+      <div class="footer__contacts">
+        <a href="tel:+74959842513" class="footer__phone">+7 (495) 984 25 13</a>
+        <a href="mailto:info@neoflex.ru" class="footer__email">info@neoflex.ru</a>
+      </div>
+    </div>
+    <nav>
+      <ul class="footer__navigation">
+        <li><a href="#" target="_blank" class="footer__link">About bank</a></li>
+        <li><a href="#" target="_blank" class="footer__link">Ask a Question</a></li>
+        <li><a href="#" target="_blank" class="footer__link">Quality of service</a></li>
+        <li><a href="#" target="_blank" class="footer__link">Requisites</a></li>
+        <li><a href="#" target="_blank" class="footer__link">Press center</a></li>
+        <li><a href="#" target="_blank" class="footer__link">Bank career</a></li>
+        <li><a href="#" target="_blank" class="footer__link">Investors</a></li>
+        <li><a href="#" target="_blank" class="footer__link">Analytics</a></li>
+        <li><a href="#" target="_blank" class="footer__link">Business and processes</a></li>
+        <li><a href="#" target="_blank" class="footer__link">Compliance and business ethics</a></li>
+      </ul>
+    </nav>
+    <p class="footer__rules">We&nbsp;use cookies to&nbsp;personalize our services and improve the user experience of&nbsp;our
+      website. Cookies are small files containing information about previous visits to&nbsp;a&nbsp;website. If&nbsp;you
+      do&nbsp;not want to&nbsp;use cookies, please change your browser settings</p>
+  </div>
+</footer>
+<template id="card-add">
+  <article class="news__card">
+    <a href="#" target="_blank" class="news__card-link">
+      <img src="../src/common/assets/images/demo1.png" alt="alt" class="news__card-image">
+    </a>
+    <p class="news__card-title">
+    </p>
+    <p class="news__card-text">
+    </p>
+  </article>
+</template>
+<script src="../src/Modules/Module-2/components/slider.js" type="module"></script>
+<script src="../src/Modules/Module-2/app.js" type="module"></script>
+</body>
+</html>
