@@ -1,7 +1,7 @@
 import React from 'react';
 import './_Preloader.scss'
 
-const Preloader = () => {
+const PreloaderToCards = () => {
   return (
     <div className="preloader">
       <div className="preloader__container">
@@ -11,4 +11,4 @@ const Preloader = () => {
   );
 };
 
-export default Preloader;
+export default PreloaderToCards;

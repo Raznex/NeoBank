@@ -21,7 +21,8 @@ const Main: React.FC<MainProps> = ({cards, addCard, isLoading, currency}) => {
       <ChooseCard/>
       <Advantage/>
       <Rate
-        currency={currency}/>
+        currency={currency}
+        isLoading={isLoading}/>
       <Map/>
       <News
         cards={cards}

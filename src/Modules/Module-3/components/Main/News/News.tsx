@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './_News.scss';
 import NewsCard from "./NewsCard/NewsCard";
-import Preloader from "../../Preloader/Preloader";
+import PreloaderToCards from "../../Preloader/PreloaderToCards/PreloaderToCards";
 
 interface NewsProps {
   cards: any;
@@ -61,7 +61,7 @@ const News: React.FC<NewsProps> = ({cards, addCard, isLoading}) => {
           We update the news feed every 15 minutes. You can learn more by clicking on the news you are interested in.
         </p>
             {isLoading ? (
-              <Preloader />
+              <PreloaderToCards />
             ) : (
         <div className="news__cards">
           <div className="news__card-container" ref={slideRef}>
