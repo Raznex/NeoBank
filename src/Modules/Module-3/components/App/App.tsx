@@ -3,19 +3,19 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import getNewsApi from "../../Api/GetNewsApi";
-// import getChangeApi from "../../Api/GetChangeValue";
-// import {
-//   currencyPairs,
-//   intervalMilliseconds,
-//   currencyElements,
-// } from "../../utils/Constants";
+import getChangeApi from "../../Api/GetChangeValue";
+import {
+  currencyPairs,
+  intervalMilliseconds,
+} from "../../utils/Constants";
 
 function App() {
   const [cards, setCards] = useState([]);
-  //Счетчик сколько фильмов показывать
   const [addCard, setAddCard] = useState(3)
   const [windowSize, setWindowSize] = useState(getWindowSize());
   const [isLoading, setIsLoading] = useState(false)
+  const [currency, setCurrency] = useState([])
+
   const calculateOffset = () => {
     const windowWidth = window.innerWidth;
     if (windowWidth >= 1300) {
@@ -48,7 +48,7 @@ function App() {
     calculateOffset();
   }, [windowSize]);
 
-  // const [currency, setCurrency] = useState([])
+
   // Получение массива карточек и рендер на страницу
   useEffect(() => {
     setIsLoading(true);
@@ -68,6 +68,7 @@ function App() {
               return null; // Пропускаем карточку с неправильным URL
             }
           } catch (error) {
+            console.error(error);
             return null;
           }
 
@@ -101,56 +102,57 @@ function App() {
         setCards(validCards);
         setIsLoading(false);
       } catch (error) {
+        console.error(error);
       }
     }
 
     fetchAndFilterNews();
   }, []);
 
+//Запрос к обмену валюты
+  function getExchangeRate(pair: any) {
+    return getChangeApi.getChange(pair)
+      .then((res) => {
+        const value = res;
+        const arr = {pair, value};
+        return arr;
+        // return `Exchange rate from ${pair.from} to ${pair.to}`;
+      });
+  }
 
-// Запрос к обмену валюты
-//   function getExchangeRate(pair) {
-//     return getChangeApi.getChange(pair)
-//       .then((res) => {
-//         const value = res;
-//         const arr = {pair, value};
-//         return arr;
-//         return `Exchange rate from ${pair.from} to ${pair.to}`;
-//       });
-//   }
-//
-// // Массив промисов для всех запросов
-//   function intervalRequestsPeriodically() {
-//     const exchangeRatePromises = currencyPairs.map((pair) => getExchangeRate(pair));
-//
-//     Promise.all(exchangeRatePromises)
-//       .then((results) => {
-//         const exchangeRatesArray = results.map((result) => {
-//           return `${result.value}`;
-//         });
-//         const roundedExchangeArray = exchangeRatesArray.map((str) => parseFloat(str).toFixed(2));
-//         for (let i = 0; i < currencyElements.length; i++) {
-//           currencyElements[i].textContent = roundedExchangeArray[i];
-//         }
-//       })
-//       .catch((error) => {
-//         console.error(error);
-//       });
-//   }
-//
-//   function executeRequestsOnLoad() {
-//     intervalRequestsPeriodically();
-//     setInterval(intervalRequestsPeriodically, intervalMilliseconds);
-//   }
-//
-// // Вызов функции при загрузке страницы
-//   window.onload = executeRequestsOnLoad;
+// Массив промисов для всех запросов
+  function intervalRequestsPeriodically() {
+    const exchangeRatePromises = currencyPairs.map((pair) => getExchangeRate(pair));
+    Promise.all(exchangeRatePromises)
+      .then((results: any) => {
+        const exchangeRatesArray = results.map((result: any, i: number) => {
+          return {
+            value: parseFloat(result.value).toFixed(2),
+            currency: currencyPairs[i].from
+          };
+        });
+        setCurrency(exchangeRatesArray)
+
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
+  function executeRequestsOnLoad() {
+    intervalRequestsPeriodically();
+    setInterval(intervalRequestsPeriodically, intervalMilliseconds);
+  }
+
+// Вызов функции при загрузке страницы
+  window.onload = executeRequestsOnLoad;
   return (
     <>
       <Header/>
       <Main cards={cards}
             addCard={addCard}
-            isLoading={isLoading}/>
+            isLoading={isLoading}
+            currency={currency}/>
       <Footer/>
     </>
   );

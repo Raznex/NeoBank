@@ -7,6 +7,5 @@ export const currencyPairs = [
   {from: "NZD", to: "RUB"},
 ];
 
-export const currencyElements = document.querySelectorAll('.rate__currency_span');
 const intervalMinutes = 15;
 export const intervalMilliseconds = intervalMinutes * 60 * 1000;

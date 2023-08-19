@@ -4,7 +4,7 @@ interface NewsCardProps {
   card: any;
 }
 
-const NewsCard = ({card}:NewsCardProps) => {
+const NewsCard: React.FC<NewsCardProps> = ({card}) => {
 
   return (
     <article className="news__card">

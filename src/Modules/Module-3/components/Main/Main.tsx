@@ -12,14 +12,16 @@ interface MainProps {
   cards: any;
   addCard: number;
   isLoading: boolean;
+  currency: any;
 }
 
-const Main = ({cards, addCard, isLoading}: MainProps) => {
+const Main: React.FC<MainProps> = ({cards, addCard, isLoading, currency}) => {
   return (
     <main className="content">
       <ChooseCard/>
       <Advantage/>
-      <Rate/>
+      <Rate
+        currency={currency}/>
       <Map/>
       <News
         cards={cards}

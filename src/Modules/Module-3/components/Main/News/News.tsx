@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import './_News.scss';
 import NewsCard from "./NewsCard/NewsCard";
 import Preloader from "../../Preloader/Preloader";
@@ -9,7 +9,7 @@ interface NewsProps {
   isLoading: boolean;
 }
 
-const News = ({cards, addCard, isLoading}: NewsProps) => {
+const News: React.FC<NewsProps> = ({cards, addCard, isLoading}) => {
 
   const [offset, setOffset] = useState(0);
   const slideRef = React.useRef<HTMLDivElement | null>(null);
