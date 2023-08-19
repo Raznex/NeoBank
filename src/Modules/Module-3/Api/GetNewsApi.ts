@@ -6,11 +6,9 @@ interface GetNewsApiOptions {
 
 class GetNewsApi {
   private _url: string;
-  private _headers: HeadersInit;
 
-  constructor(options: GetNewsApiOptions) {
+  constructor(options: { url: string }) {
     this._url = options.url;
-    this._headers = options.headers;
   }
 
   private _getResponseData(res: Response) {
@@ -27,7 +25,13 @@ class GetNewsApi {
   getNews = () => {
     return this._request(`${this._url}`, {
       method: "GET",
-      headers: this._headers,
     });
   };
 }
+
+const getNewsApi = new GetNewsApi({
+  url: "https://newsapi.org/v2/everything?q=keyword&apiKey=e3f179be39aa49c4b4320b572a2744a8",
+});
+
+
+export default getNewsApi;

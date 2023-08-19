@@ -1,14 +1,21 @@
 import React from 'react';
 
-const NewsCard = () => {
+interface NewsCardProps {
+  card: any;
+}
+
+const NewsCard = ({card}:NewsCardProps) => {
+
   return (
     <article className="news__card">
-      <a href="/#" target="_blank" className="news__card-link">
-        <img src={''} alt="alt" className="news__card-image"/>
+      <a href={card.url} target="_blank" rel="noreferrer" className="news__card-link">
+        <img src={card.urlToImage} alt={card.title} className="news__card-image"/>
       </a>
       <p className="news__card-title">
+        {card.title}
       </p>
       <p className="news__card-text">
+        {card.description}
       </p>
     </article>
   );

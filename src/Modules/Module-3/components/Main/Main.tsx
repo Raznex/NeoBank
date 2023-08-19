@@ -7,14 +7,25 @@ import Map from "./Map/Map";
 import News from "./News/News";
 import Subscribe from "./Subscribe/Subscribe";
 
-const Main: React.FC = () => {
+
+interface MainProps {
+  cards: any;
+  addCard: number;
+  isLoading: boolean;
+}
+
+const Main = ({cards, addCard, isLoading}: MainProps) => {
   return (
     <main className="content">
       <ChooseCard/>
       <Advantage/>
       <Rate/>
       <Map/>
-      <News/>
+      <News
+        cards={cards}
+        addCard={addCard}
+        isLoading={isLoading}
+      />
       <Subscribe/>
     </main>
   );
