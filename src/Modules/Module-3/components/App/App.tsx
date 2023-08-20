@@ -4,10 +4,12 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import getNewsApi from "../../Api/GetNewsApi";
 import getChangeApi from "../../Api/GetChangeValue";
+import '../Content/_Content.scss'
 import {
   currencyPairs,
   intervalMilliseconds,
 } from "../../utils/Constants";
+import CreditCard from "../CreditCard/CreditCard";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -149,10 +151,13 @@ function App() {
   return (
     <>
       <Header/>
-      <Main cards={cards}
-            addCard={addCard}
-            isLoading={isLoading}
-            currency={currency}/>
+      <main className="content">
+        <CreditCard/>
+        {/*<Main cards={cards}*/}
+        {/*      addCard={addCard}*/}
+        {/*      isLoading={isLoading}*/}
+        {/*      currency={currency}/>*/}
+      </main>
       <Footer/>
     </>
   );

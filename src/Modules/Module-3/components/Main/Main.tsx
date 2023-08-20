@@ -1,5 +1,4 @@
 import React from 'react';
-import './_Content.scss'
 import ChooseCard from "./ChooseCard/ChooseCard";
 import Advantage from "./Advantage/Advantage";
 import Rate from "./Rate/Rate";
@@ -17,7 +16,7 @@ interface MainProps {
 
 const Main: React.FC<MainProps> = ({cards, addCard, isLoading, currency}) => {
   return (
-    <main className="content">
+    <>
       <ChooseCard/>
       <Advantage/>
       <Rate
@@ -30,7 +29,7 @@ const Main: React.FC<MainProps> = ({cards, addCard, isLoading, currency}) => {
         isLoading={isLoading}
       />
       <Subscribe/>
-    </main>
+    </>
   );
 };
 
