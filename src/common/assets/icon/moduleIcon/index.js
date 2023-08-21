@@ -1,0 +1,14 @@
+export {default as AdvantageIllustration} from './AdvantageIllustration';
+export {default as AdvantageMark} from './AdvantageMark';
+export {default as BagDuotone} from './BagDuotone';
+export {default as Burse} from './Burse';
+export {default as CalendarDuotone} from './CalendarDuotone';
+export {default as ClockDuotone} from './ClockDuotone';
+export {default as CreditCardDuotone} from './CreditCardDuotone';
+export {default as HeaderMenu} from './HeaderMenu';
+export {default as Letter} from './Letter';
+export {default as MapGlobal} from './MapGlobal';
+export {default as MoneyDuotone} from './MoneyDuotone';
+export {default as Send} from './Send';
+export {default as TransferLongLeftLight} from './TransferLongLeftLight';
+export {default as TransferLongRightLight} from './TransferLongRightLight';

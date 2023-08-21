@@ -1,4 +1,5 @@
 // @ts-ignore
+// eslint-disable-next-line
 interface GetNewsApiOptions {
   url: string;
   headers: HeadersInit;

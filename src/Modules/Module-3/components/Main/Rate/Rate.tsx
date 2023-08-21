@@ -1,6 +1,6 @@
 import React from 'react';
 import './_Rate.scss';
-import burse from '../../../../../common/assets/icon/burse.svg';
+import {Burse} from '../../../../../common/assets/icon/moduleIcon/index'
 import RateCurrency from "./RateCurrency/RateCurrency";
 import PreloaderToCurrency from "../../Preloader/PreloaderToCurrency/PreloaderToCurrency";
 
@@ -28,7 +28,7 @@ const Rate: React.FC<RateProps> = ({currency, isLoading}) => {
       </div>
       <div className="rate__renewal">
         <p className="rate__time">Update every 15&nbsp;minutes, MSC&nbsp;09.08.2022</p>
-        <img src={burse} alt="" className="rate__exchange"/>
+        <Burse className="rate__exchange"/>
       </div>
     </section>
   );

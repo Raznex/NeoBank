@@ -1,0 +1,67 @@
+.tabs {
+  font-family: Ubuntu, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 96px;
+
+  &__titles {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    position: relative;
+  }
+
+  &__title {
+    display: flex;
+    color: #7B7454;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.32px;
+    padding: 0 18px 10px;
+    cursor: pointer;
+  }
+
+  &__title:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(128, 128, 128, 0.20);
+  }
+
+  &__title_active {
+    border-bottom: 3px solid #7B7454;
+  }
+}
+
+@media screen and (max-width: 650px)  {
+  .tabs {
+
+    &__title {
+      font-size: 12px;
+      line-height: 12px;
+      padding: 0 13px 8px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .tabs {
+    margin-top: 10px;
+
+    &__title {
+      font-size: 10px;
+      line-height: 12px;
+      padding: 0 12px 6px;
+    }
+  }
+}

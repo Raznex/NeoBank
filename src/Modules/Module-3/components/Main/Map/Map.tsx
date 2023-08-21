@@ -1,5 +1,5 @@
 import React from 'react';
-import map from '../../../../../common/assets/icon/Map__global.svg';
+import {MapGlobal} from '../../../../../common/assets/icon/moduleIcon/index'
 import './_Map.scss';
 
 const Map: React.FC = () => {
@@ -7,7 +7,7 @@ const Map: React.FC = () => {
     <section className="map">
       <h2 className="map__title">You can use our services anywhere in&nbsp;the&nbsp;world</h2>
       <p className="map__offer">Withdraw and transfer money online through our application</p>
-      <img src={map} alt="map" className="map__global"/>
+      <MapGlobal className="map__global"/>
     </section>
   );
 };
