@@ -122,40 +122,45 @@
     line-height: 20px;
   }
 
-  .customize-card__form {
+  &__form {
     display: flex;
+    flex-flow: row wrap;
+    align-items: center;
     gap: 16px;
     width: 100%;
     margin-top: 26px;
   }
 
-  .customize-card__inputs {
+  &__inputs {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .customize-card__input-box {
+  &__input-box {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 297px;
     justify-content: space-between;
+    position: relative;
   }
 
-  .customize-card__lable {
+  &__lable {
     color: #1A202C;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: 16px;
     margin-bottom: 8px;
+    cursor: default;
   }
 
-  .customize-card__lable-span {
+  &__lable-span {
     color: #F00;
   }
 
-  .customize-card__input {
+  &__input {
+    width: 100%;
     color: black;
     font-size: 14px;
     font-style: normal;
@@ -165,17 +170,97 @@
     border: 1px solid rgba(128, 128, 128, 0.20);
     background: #F9F5E3;
     padding: 13px 16px;
+
+    &_select {
+      appearance: none;
+      outline: none;
+      cursor: pointer;
+    }
   }
 
-  .customize-card__input:focus {
+  &__input_error {
+    border: 2px solid #FF5631;
+  }
+
+  &__input:focus {
     border: 2px solid #5B35D5;
   }
-  .customize-card__input.placeholder {
+
+  &__input_focus {
+    border: 2px solid #5B35D5;
+  }
+
+  &__input.placeholder {
     color: #808080;
+  }
+
+  &__options {
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  &__icon {
+    display: none;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 34px;
+    right: 8px;
+    z-index: 2;
+  }
+
+  &__expand {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 34px;
+    right: 8px;
+    pointer-events: none;
+  }
+
+  &__span {
+    width: 100%;
+    margin: 3px 0 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #FF5631;
+  }
+
+  &__button {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: var(--blue-3, #003CFF);
+    width: 148px;
+    height: 48px;
+    padding: 8px;
+    margin-top: 24px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out 0.1s;
+  }
+
+  &__button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+  &__button-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
   }
 }
 
-@media screen and (max-width: 1100px)  {
+@media screen and (max-width: 1100px) {
   .customize-card {
     padding: 28px;
     margin: 0 0 80px;
@@ -255,9 +340,14 @@
       padding-right: 0;
       border-right: none;
     }
+
     &__container-upper-2 {
       width: 100%;
       padding: 20px 0 0;
+    }
+
+    &__input-box {
+      width: 240px;
     }
   }
 }
