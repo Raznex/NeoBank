@@ -71,6 +71,10 @@ const CustomizeCard = () => {
               <input
                 {...register("lastName", {
                   required: "Enter your last name",
+                  pattern: {
+                    value: /^(?=.{2,40}$)[a-zA-Zа-яА-ЯёЁ]+(?: [a-zA-Zа-яА-ЯёЁ]+)*$/i,
+                    message: "Incorrect last name"
+                  }
                 })}
                 type="text"
                 id="lastName-field"
@@ -98,6 +102,10 @@ const CustomizeCard = () => {
               <input
                 {...register("firstName", {
                   required: "Enter your first name",
+                  pattern: {
+                    value: /^(?=.{2,40}$)[a-zA-Zа-яА-ЯёЁ]+(?: [a-zA-Zа-яА-ЯёЁ]+)*$/i,
+                    message: "Incorrect first name"
+                  }
                 })}
                 type="text"
                 id="firstName-field"
@@ -127,6 +135,7 @@ const CustomizeCard = () => {
                 type="text"
                 id="middleName-field"
                 className="customize-card__input"
+                minLength={2}
                 maxLength={40}
                 name="middleName"
                 placeholder="For Example Victorovich"
