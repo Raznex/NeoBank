@@ -10,7 +10,6 @@ import './_AboutCard.scss'
 
 const AboutCard = () => {
   return (
-    <>
       <div className="about-card__container">
         <div className="about-card__container-s">
           <article className="about-card__card">
@@ -46,7 +45,6 @@ const AboutCard = () => {
           </article>
         </div>
       </div>
-    </>
   );
 };
 

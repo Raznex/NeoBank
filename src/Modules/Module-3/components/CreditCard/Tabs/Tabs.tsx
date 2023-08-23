@@ -1,6 +1,8 @@
 import React from 'react';
 import './_Tabs.scss';
 import AboutCard from "./AboutCard/AboutCard";
+import Rates from "./Rates/Rates";
+import Cashback from "./Cashback/Cashback";
 
 const Tabs = () => {
   return (
@@ -19,7 +21,9 @@ const Tabs = () => {
           FAQ
         </li>
       </ul>
-      <AboutCard/>
+      {/*<AboutCard/>*/}
+      {/*<Rates/>*/}
+      <Cashback/>
     </section>
   );
 };
