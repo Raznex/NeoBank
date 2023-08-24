@@ -11,6 +11,7 @@ export {default as ExpandDown} from './ExpandDown';
 export {default as HeaderMenu} from './HeaderMenu';
 export {default as Letter} from './Letter';
 export {default as MapGlobal} from './MapGlobal';
+export {default as MapGlobals} from './MapGlobals';
 export {default as MoneyDuotone} from './MoneyDuotone';
 export {default as Send} from './Send';
 export {default as TransferLongLeftLight} from './TransferLongLeftLight';

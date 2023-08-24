@@ -1,31 +1,42 @@
 import React from 'react';
 import './_Tabs.scss';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import AboutCard from "./AboutCard/AboutCard";
 import Rates from "./Rates/Rates";
 import Cashback from "./Cashback/Cashback";
+import Faq from "./Faq/Faq";
 
-const Tabs = () => {
+const ListTabs = () => {
   return (
-    <section className="tabs">
-      <ul className="tabs__titles">
-        <li className="tabs__title tabs__title_active">
+    <Tabs className="tabs">
+      <TabList className="tabs__titles">
+        <Tab className="tabs__title">
           About card
-        </li>
-        <li className="tabs__title">
+        </Tab>
+        <Tab className="tabs__title">
           Rates and conditions
-        </li>
-        <li className="tabs__title">
+        </Tab>
+        <Tab className="tabs__title">
           Cashback
-        </li>
-        <li className="tabs__title">
+        </Tab>
+        <Tab className="tabs__title">
           FAQ
-        </li>
-      </ul>
-      {/*<AboutCard/>*/}
-      {/*<Rates/>*/}
-      <Cashback/>
-    </section>
+        </Tab>
+      </TabList>
+      <TabPanel>
+        <AboutCard/>
+      </TabPanel>
+      <TabPanel>
+        <Rates/>
+      </TabPanel>
+      <TabPanel>
+        <Cashback/>
+      </TabPanel>
+      <TabPanel>
+        <Faq/>
+      </TabPanel>
+    </Tabs>
   );
 };
 
-export default Tabs;
+export default ListTabs;

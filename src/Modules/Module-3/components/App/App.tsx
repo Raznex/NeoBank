@@ -10,6 +10,8 @@ import {
   intervalMilliseconds,
 } from "../../utils/Constants";
 import CreditCard from "../CreditCard/CreditCard";
+import {Route, Routes} from "react-router-dom";
+import PageNotFound from "../PageNotFound/PageNotFound";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -152,11 +154,23 @@ function App() {
     <>
       <Header/>
       <main className="content">
-        <CreditCard/>
-        {/*<Main cards={cards}*/}
-        {/*      addCard={addCard}*/}
-        {/*      isLoading={isLoading}*/}
-        {/*      currency={currency}/>*/}
+        <Routes>
+          <Route
+            path='/'
+            element={<Main cards={cards}
+                           addCard={addCard}
+                           isLoading={isLoading}
+                           currency={currency}/>}
+          />
+          <Route
+            path='/credit-card'
+            element={<CreditCard/>}
+          />
+          <Route
+            path='*'
+            element={<PageNotFound/>}
+          />
+        </Routes>
       </main>
       <Footer/>
     </>

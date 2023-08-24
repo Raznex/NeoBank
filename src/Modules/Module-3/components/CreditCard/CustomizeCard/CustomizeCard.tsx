@@ -15,7 +15,7 @@ const CustomizeCard = () => {
   const [isInputFocused, setIsInputFocused] = useState(false);
   const {handleSubmit, formSubmit, register, errors, formState} = FormValidation();
 
-
+// Проверка на 18-летие
   const handleDateChange = (date: any) => {
     if (date instanceof Date) {
       const isValidAge = validateAge(date);

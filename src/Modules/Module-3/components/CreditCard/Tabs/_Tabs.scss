@@ -44,6 +44,13 @@
   }
 }
 
+.react-tabs__tab--selected {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid #7B7454;
+  color: #7B7454;
+}
+
 @media screen and (max-width: 650px)  {
   .tabs {
 
