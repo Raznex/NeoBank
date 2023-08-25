@@ -51,6 +51,7 @@
     "@svgr/cli": "^8.1.0",
     "@svgr/webpack": "^8.1.0",
     "@types/react-datepicker": "^4.15.0",
+    "prettier": "^3.0.2",
     "rimraf": "^5.0.1"
   }
 }
