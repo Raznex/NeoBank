@@ -2,7 +2,7 @@
 /*page*/
 @import '../Modules/Module-1/styles/Page/Page';
 /*header*/
-@import '../common/assets/styles/Header/Header';
+@import '../Modules/Module-3/components/Header/Header';
 /*main*/
 @import '../Modules/Module-1/styles/Content/Content';
 @import '../Modules/Module-1/styles/ChooseCard/ChooseCard';
@@ -12,4 +12,4 @@
 @import '../Modules/Module-1/styles/Subscribe/Subscribe';
 @import '../Modules/Module-2/styles/News/News';
 /*footer*/
-@import '../common/assets/styles/Footer/Footer';
+@import '../Modules/Module-3/components/Footer/Footer';

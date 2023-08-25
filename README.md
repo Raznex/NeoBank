@@ -3,6 +3,12 @@
 
 ## Технологии используемые в данном проекте:
 1. HTML
-2. CSS
+2. SCSS
 3. JS
-## [Ссылка на Github Pages](https://raznex.github.io/NeoBank/)
+4. TSX
+
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+

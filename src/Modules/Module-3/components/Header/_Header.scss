@@ -27,6 +27,7 @@
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+    position: relative;
   }
 
   &__logo {
@@ -37,6 +38,19 @@
     line-height: 112%;
     margin: 0;
     padding: 0;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out 0.1s;
+  }
+
+  &__logo:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+  &__menu {
+    display: flex;
+    width: 100%;
+    align-items: center;
   }
 
   &__links {
@@ -45,6 +59,7 @@
     padding: 0;
     display: flex;
     column-gap: 40px;
+    margin: auto;
   }
 
   &__link {
@@ -58,6 +73,10 @@
     color: #1D1929;
     opacity: 1;
     transition: opacity 0.2s ease-in-out 0.1s;
+
+    &_active {
+      color: #B2A35F;
+    }
   }
 
   &__link:hover {
@@ -87,8 +106,17 @@
     cursor: pointer;
   }
 
-  &__dropdown {
+  &__button-burger {
     display: none;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
   }
 }
 
@@ -101,74 +129,57 @@
       line-height: 20px;
     }
 
+    &__button-burger_close {
+      display: block;
+      order: -1;
+      background-image: url("../../../../common/assets/icon/close__menu.svg");
+    }
+
+    &__button-burger_open {
+      display: block;
+      background-image: url("../../../../common/assets/icon/header__menu.svg");
+    }
+
+    &__menu {
+      flex-direction: column;
+      align-items: flex-start;
+      background: #F5F4FF;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      width: 230px;
+      z-index: 1;
+      position: absolute;
+      top: -8px;
+      right: 0;
+      max-height: 0;
+      transition: max-height 0.5s ease-out, padding-top 0.4s ease;
+
+      &_active {
+        max-height: 500px;
+        padding-top: 10px;
+      }
+    }
+
     &__links {
-      display: none;
+      flex-direction: column;
+      order: 3;
+      margin: 0;
     }
 
     &__button {
-      display: none;
-    }
-
-    &__button_burger {
-      display: block;
+      font-size: 18px;
+      width: 140px;
+      order: 2;
       margin: 0 10px 0;
       padding: 0;
     }
 
-    &__drop-button {
-      background-color: transparent;
-      padding: 16px;
-      background-image: url("../common/assets/icon/header__menu.svg");
-      background-size: cover;
-      width: 40px;
-      height: 40px;
-      border: none;
-      transition: background-image 0s ease;
-    }
-
-    &__dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    &__dropdown-content {
-      font-family: Ubuntu, Arial, sans-serif;
-      list-style: none;
-      padding: 10px 0 0;
-      margin: 0;
-      display: none;
-      position: absolute;
-      top: -50%;
-      right: 0;
-      background-color: #F5F4FF;
-      min-width: 150px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      z-index: 1;
-      opacity: 0;
-    }
-
     &__link {
-      color: #1D1929;
-      padding: 12px 16px;
+      font-size: 20px;
+      padding: 16px 22px;
       text-decoration: none;
       display: block;
-    }
-
-    /*animation*/
-    &__dropdown-content a:focus {
-      background-color: #F5F4FF;
-    }
-
-    &__dropdown:hover &__dropdown-content {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      animation: dropdown-appear 0.4s ease forwards;
-    }
-
-    &__dropdown:hover &__drop-button {
-      background-image: none
     }
   }
 }
@@ -177,6 +188,14 @@
   .header {
     padding: 7px 15px;
 
+    &__menu {
+      align-items: center;
+    }
+
+    &__links {
+      align-items: center;
+    }
+
     &__logo {
       font-size: 18px;
       line-height: 90%;
@@ -184,23 +203,18 @@
       padding: 0;
     }
 
-    &__link {
-      padding: 6px 10px;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 20px;
-    }
-
-    &__button_burger {
-      width: 100px;
-      height: 42px;
-      font-size: 14px;
-      border-radius: 10px;
+    &__menu {
+      width: 100%;
     }
 
     &__dropdown-content {
       min-width: 120px;
+    }
+
+    &__button-burger {
+      width: 30px;
+      height: 30px;
+      top: -6px;
     }
   }
 }

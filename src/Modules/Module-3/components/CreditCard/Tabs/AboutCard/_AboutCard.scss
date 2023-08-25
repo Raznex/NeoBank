@@ -1,0 +1,155 @@
+.about-card {
+  font-family: Ubuntu, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 96px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 40px;
+  }
+
+  &__container-s {
+    display: flex;
+    width: 100%;
+    gap: 40px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    border-radius: 28px;
+    background: #EAECEE;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.20), 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+    max-width: 405px;
+    width: 100%;
+
+    &_l {
+      max-width: 630px;
+    }
+
+    &_gray {
+      background: rgba(127, 146, 172, 0.70);
+    }
+  }
+
+  &__card-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  &__card-name {
+    color: #000;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 0.6px;
+    margin: 24px 0 16px;
+  }
+
+  &__card-description {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.32px;
+  }
+}
+
+@media screen and (max-width: 1110px)  {
+  .about-card {
+
+    &__container {
+      gap: 30px;
+    }
+
+    &__container-s {
+      gap: 30px;
+    }
+
+    &__card {
+      padding: 24px;
+    }
+
+    &__card-name {
+      font-size: 22px;
+      line-height: 30px;
+      margin: 18px 0 14px;
+    }
+
+    &__card-description {
+      font-size: 13px;
+      line-height: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .about-card {
+
+    &__container {
+      gap: 20px;
+    }
+
+    &__container-s {
+      gap: 20px;
+    }
+
+    &__card {
+      padding: 18px;
+    }
+
+    &__card-name {
+      font-size: 18px;
+      line-height: 24px;
+      margin: 12px 0 8px;
+    }
+
+    &__card-description {
+      font-size: 10px;
+      line-height: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 650px)  {
+  .about-card {
+
+    &__container {
+      gap: 20px;
+    }
+
+    &__container-s {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &__card {
+      padding: 24px;
+      max-width: 300px;
+    }
+
+    &__card-name {
+      font-size: 20px;
+      line-height: 26px;
+      margin: 18px 0 14px;
+    }
+
+    &__card-description {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+}

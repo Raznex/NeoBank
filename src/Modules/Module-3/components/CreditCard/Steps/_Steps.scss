@@ -1,0 +1,148 @@
+.steps {
+  font-family: Ubuntu, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 44px;
+
+  &__title {
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 44px;
+    margin-bottom: 14px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 50px;
+  }
+
+  &__direction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__upper-line {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+
+  &__number {
+    color: #000;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 0;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    padding: 24px 18px;
+  }
+
+  &__line {
+    height: 1px;
+    background: rgba(128, 128, 128, 0.20);
+    margin-left: 36px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  &__description {
+    color: #000;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    max-width: 344px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 1000px)  {
+  .steps {
+
+    &__container {
+      gap: 40px;
+    }
+
+    &__number {
+      font-size: 17px;
+      padding: 21px 16px;
+    }
+
+    &__line {
+      margin-left: 22px;
+    }
+
+    &__description {
+      font-size: 14px;
+      line-height: 20px;
+      margin-top: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .steps {
+
+    &__container {
+      gap: 35px;
+    }
+
+    &__number {
+      font-size: 17px;
+      padding: 21px 16px;
+    }
+
+    &__line {
+      margin-left: 22px;
+    }
+
+    &__description {
+      font-size: 12px;
+      line-height: 18px;
+      margin-top: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .steps {
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 310px;
+    }
+
+    &__container {
+      gap: 35px;
+    }
+
+    &__number {
+      font-size: 17px;
+      padding: 21px 16px;
+    }
+
+    &__line {
+      margin-left: 22px;
+    }
+
+    &__description {
+      font-size: 12px;
+      line-height: 18px;
+      margin-top: 15px;
+    }
+  }
+}
