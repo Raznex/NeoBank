@@ -1,5 +1,5 @@
 import {SubmitHandler, useForm} from "react-hook-form";
-import FormPrescording from './validationInterface'
+import {FormPrescording} from './Interface'
 
 export default function FormValidation():any {
 

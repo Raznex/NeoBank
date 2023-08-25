@@ -5,10 +5,10 @@ import Rate from "./Rate/Rate";
 import Map from "./Map/Map";
 import News from "./News/News";
 import Subscribe from "./Subscribe/Subscribe";
-
+import {NewsCard} from '../../utils/Interface'
 
 interface MainProps {
-  cards: any;
+  cards: NewsCard[];
   addCard: number;
   isLoading: boolean;
   currency: any;

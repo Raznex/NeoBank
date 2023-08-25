@@ -12,13 +12,14 @@ import {
 import CreditCard from "../CreditCard/CreditCard";
 import {Route, Routes} from "react-router-dom";
 import PageNotFound from "../PageNotFound/PageNotFound";
+import { NewsCard, Pair, ExchangeResult } from '../../utils/Interface'
 
 function App() {
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState<NewsCard[]>([]);
   const [addCard, setAddCard] = useState(3)
   const [windowSize, setWindowSize] = useState(getWindowSize());
   const [isLoading, setIsLoading] = useState(false)
-  const [currency, setCurrency] = useState([])
+  const [currency, setCurrency] = useState<{ value: string[]; currency: string; }[]>([])
 
   const calculateOffset = () => {
     const windowWidth = window.innerWidth;
@@ -52,7 +53,6 @@ function App() {
     calculateOffset();
   }, [windowSize]);
 
-
   // Получение массива карточек и рендер на страницу
   useEffect(() => {
     setIsLoading(true);
@@ -61,7 +61,7 @@ function App() {
       try {
         const data = await getNewsApi.getNews();
 
-        const filteredCards = await Promise.all(data.articles.map(async (card: any) => {
+        const filteredCards = await Promise.all(data.articles.map(async (card: NewsCard) => {
           if (!card.urlToImage) {
             return null; // Пропускаем карточку без изображения
           }
@@ -102,7 +102,7 @@ function App() {
           }
         }));
 
-        const validCards: any = filteredCards.filter(card => card !== null);
+        const validCards: NewsCard[] = filteredCards.filter(card => card !== null);
         setCards(validCards);
         setIsLoading(false);
       } catch (error) {
@@ -114,13 +114,11 @@ function App() {
   }, []);
 
 //Запрос к обмену валюты
-  function getExchangeRate(pair: any) {
+  function getExchangeRate(pair: Pair): Promise<ExchangeResult> {
     return getChangeApi.getChange(pair)
-      .then((res) => {
+      .then((res: string[]) => {
         const value = res;
-        const arr = {pair, value};
-        return arr;
-        // return `Exchange rate from ${pair.from} to ${pair.to}`;
+        return { value, pair };
       });
   }
 
@@ -128,10 +126,11 @@ function App() {
   function intervalRequestsPeriodically() {
     const exchangeRatePromises = currencyPairs.map((pair) => getExchangeRate(pair));
     Promise.all(exchangeRatePromises)
-      .then((results: any) => {
-        const exchangeRatesArray = results.map((result: any, i: number) => {
+      .then((res: ExchangeResult[]) => {
+        const exchangeRatesArray = res.map((result, i: number) => {
           return {
-            value: parseFloat(result.value).toFixed(2),
+            // @ts-ignore
+            value: result.value.toFixed(2),
             currency: currencyPairs[i].from
           };
         });
