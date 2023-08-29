@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
@@ -7,11 +8,13 @@ import getChangeApi from '../../Api/GetChangeValue';
 import '../Content/_Content.scss';
 import {currencyPairs, intervalMilliseconds} from '../../utils/Constants';
 import CreditCard from '../CreditCard/CreditCard';
+
 import {Route, Routes} from 'react-router-dom';
+
 import PageNotFound from '../PageNotFound/PageNotFound';
 import {NewsCard, Pair, ExchangeResult} from '../../utils/Interface';
 
-function App() {
+const App = () => {
   const [cards, setCards] = useState<NewsCard[]>([]);
   const [addCard, setAddCard] = useState(3);
   const [windowSize, setWindowSize] = useState(getWindowSize());
@@ -31,7 +34,10 @@ function App() {
 
   function getWindowSize() {
     const {innerWidth, innerHeight} = window;
-    return {innerWidth, innerHeight};
+    return {
+      innerWidth,
+      innerHeight,
+    };
   }
 
   useEffect(() => {
@@ -112,11 +118,14 @@ function App() {
     fetchAndFilterNews();
   }, []);
 
-  //Запрос к обмену валюты
+  // Запрос к обмену валюты
   function getExchangeRate(pair: Pair): Promise<ExchangeResult> {
     return getChangeApi.getChange(pair).then((res: string[]) => {
       const value = res;
-      return {value, pair};
+      return {
+        value,
+        pair,
+      };
     });
   }
 
@@ -125,13 +134,11 @@ function App() {
     const exchangeRatePromises = currencyPairs.map((pair) => getExchangeRate(pair));
     Promise.all(exchangeRatePromises)
       .then((res: ExchangeResult[]) => {
-        const exchangeRatesArray = res.map((result, i: number) => {
-          return {
-            // @ts-ignore
-            value: result.value.toFixed(2),
-            currency: currencyPairs[i].from,
-          };
-        });
+        const exchangeRatesArray = res.map((result, i: number) => ({
+          // @ts-ignore
+          value: result.value.toFixed(2),
+          currency: currencyPairs[i].from,
+        }));
         setCurrency(exchangeRatesArray);
       })
       .catch((error) => {
@@ -162,6 +169,6 @@ function App() {
       <Footer />
     </>
   );
-}
+};
 
 export default App;
