@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
 import Header from '../Header/Header';
 import Main from '../Main/Main';
@@ -6,20 +7,25 @@ import Footer from '../Footer/Footer';
 import getNewsApi from '../../Api/GetNewsApi';
 import getChangeApi from '../../Api/GetChangeValue';
 import '../Content/_Content.scss';
-import {currencyPairs, intervalMilliseconds} from '../../utils/Constants';
+import { currencyPairs, intervalMilliseconds } from '../../utils/Constants';
 import CreditCard from '../CreditCard/CreditCard';
-
-import {Route, Routes} from 'react-router-dom';
-
 import PageNotFound from '../PageNotFound/PageNotFound';
-import {NewsCard, Pair, ExchangeResult} from '../../utils/Interface';
+import { Pair, ExchangeResult, CurrencyData, NewsCards } from '../../utils/Interface';
+
 
 const App = () => {
-  const [cards, setCards] = useState<NewsCard[]>([]);
+  function getWindowSize() {
+    const { innerWidth, innerHeight } = window;
+    return {
+      innerWidth,
+      innerHeight,
+    };
+  }
+  const [cards, setCards] = useState<NewsCards[]>([]);
   const [addCard, setAddCard] = useState(3);
   const [windowSize, setWindowSize] = useState(getWindowSize());
   const [isLoading, setIsLoading] = useState(false);
-  const [currency, setCurrency] = useState<{value: string[]; currency: string}[]>([]);
+  const [currency, setCurrency] = useState<CurrencyData[]>([]);
 
   const calculateOffset = () => {
     const windowWidth = window.innerWidth;
@@ -31,14 +37,6 @@ const App = () => {
       setAddCard(1);
     }
   };
-
-  function getWindowSize() {
-    const {innerWidth, innerHeight} = window;
-    return {
-      innerWidth,
-      innerHeight,
-    };
-  }
 
   useEffect(() => {
     function handleWindowResize() {
@@ -55,7 +53,6 @@ const App = () => {
   useEffect(() => {
     calculateOffset();
   }, [windowSize]);
-
   // Получение массива карточек и рендер на страницу
   useEffect(() => {
     setIsLoading(true);
@@ -65,7 +62,7 @@ const App = () => {
         const data = await getNewsApi.getNews();
 
         const filteredCards = await Promise.all(
-          data.articles.map(async (card: NewsCard) => {
+          data.articles.map(async (card: NewsCards) => {
             if (!card.urlToImage) {
               return null; // Пропускаем карточку без изображения
             }
@@ -76,7 +73,6 @@ const App = () => {
                 return null; // Пропускаем карточку с неправильным URL
               }
             } catch (error) {
-              console.error(error);
               return null;
             }
 
@@ -104,14 +100,13 @@ const App = () => {
             } catch (error) {
               return null;
             }
-          })
+          }),
         );
 
-        const validCards: NewsCard[] = filteredCards.filter((card) => card !== null);
+        const validCards: NewsCards[] = filteredCards.filter((card) => card !== null);
         setCards(validCards);
         setIsLoading(false);
       } catch (error) {
-        console.error(error);
       }
     }
 
@@ -141,8 +136,7 @@ const App = () => {
         }));
         setCurrency(exchangeRatesArray);
       })
-      .catch((error) => {
-        console.error(error);
+      .catch(() => {
       });
   }
 
@@ -160,10 +154,17 @@ const App = () => {
         <Routes>
           <Route
             path="/"
-            element={<Main cards={cards} addCard={addCard} isLoading={isLoading} currency={currency} />}
+            element={ (
+              <Main
+                cards={ cards }
+                addCard={ addCard }
+                isLoading={ isLoading }
+                currency={ currency }
+              />
+            ) }
           />
-          <Route path="/credit-card" element={<CreditCard />} />
-          <Route path="*" element={<PageNotFound />} />
+          <Route path="/credit-card" element={ <CreditCard /> } />
+          <Route path="*" element={ <PageNotFound /> } />
         </Routes>
       </main>
       <Footer />

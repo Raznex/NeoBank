@@ -1,6 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
+
 import './_Subscribe.scss';
-import {Letter, Send} from '../../../../../common/assets/icon/moduleIcon/index'
+import { Letter, Send } from '../../../../../common/assets/icon/moduleIcon/index';
+
 
 const Subscribe: React.FC = () => {
   const [isSubscribed, setIsSubscribed] = useState<boolean>(false);
@@ -27,14 +29,14 @@ const Subscribe: React.FC = () => {
       <a href="/#" target="_blank" className="subscribe__support">Support</a>
       <a href="/#" target="_blank" className="subscribe__get">Subscribe Newsletter&nbsp;&&nbsp;get</a>
       <a href="/#" target="_blank" className="subscribe__news">Bank News</a>
-      <form action="" className="subscribe__form" onSubmit={handleSubscribe}>
-        {isSubscribed ? (
+      <form action="" className="subscribe__form" onSubmit={ handleSubscribe }>
+        { isSubscribed ? (
           <p className="subscribe__success">
             You are already subscribed to the bank's newsletter
           </p>
         ) : (
           <>
-            <Letter className="subscribe__letter"/>
+            <Letter className="subscribe__letter" />
             <input
               type="email"
               className="subscribe__input"
@@ -42,11 +44,11 @@ const Subscribe: React.FC = () => {
               placeholder="Your email"
             />
             <button type="submit" className="subscribe__submit subscribe__submit_little">
-              <Send className="subscribe__send"/>
+              <Send className="subscribe__send" />
               <p className="subscribe__button-text">Subscribe</p>
             </button>
           </>
-        )}
+        ) }
       </form>
     </section>
   );

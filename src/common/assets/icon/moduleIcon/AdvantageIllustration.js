@@ -1,6 +1,8 @@
 import * as React from 'react';
+
+
 const SvgAdvantageIllustration = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 510 415" {...props}>
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 510 415" { ...props }>
     <path
       fill="url(#advantage__illustration_svg__a)"
       d="m380.649 293.659-39.722-23.318-31.201 46.432c18.228 15.212 48.851 26.275 64.675 22.897 32.474-6.933 98.097-99.136 107.203-106.156 30.998-23.897 41.074-32.966 2.286-14.397-36.981 17.704-17.394 0-26.454 0-10.885.76-7.278 10.421-3.238 17.343l-73.549 57.199Z"
@@ -14,17 +16,17 @@ const SvgAdvantageIllustration = (props) => (
       d="M112.216 404.588c-47.68-6.045-16.67-54.37-8.216-70.329a65.104 65.104 0 0 0 36.164 15.041l16.431 1.459-6.728 15.522 72.639 17.006 10.191 28.271c-7.259-1.236-61.188.549-120.481-6.97Z"
     />
     <path fill="#30235B" d="M235.275 103.623c2.347-4.243 9.077-10.184 17.224 0h-17.224Z" />
-    <ellipse cx={239.187} cy={249.006} fill="#CF0606" rx={25.973} ry={18.508} />
+    <ellipse cx={ 239.187 } cy={ 249.006 } fill="#CF0606" rx={ 25.973 } ry={ 18.508 } />
     <path
       fill="url(#advantage__illustration_svg__d)"
       d="m217.906 248.011 3.63-36.149h35.345l4.06 36.149c-1.419 4.257-8.119 12.893-20.525 12.893-15.813 0-21.497-8.636-22.51-12.893Z"
     />
     <mask
       id="advantage__illustration_svg__f"
-      width={44}
-      height={50}
-      x={217}
-      y={211}
+      width={ 44 }
+      height={ 50 }
+      x={ 217 }
+      y={ 211 }
       maskUnits="userSpaceOnUse"
       style={{
         maskType: 'alpha',
@@ -39,7 +41,7 @@ const SvgAdvantageIllustration = (props) => (
       <path
         fill="#000"
         d="M269.619 213.246c-31.959 39.542-49.818 7.748-59.043 2.979l6.339-26.732 37.842-4.519 14.862 28.272Z"
-        opacity={0.1}
+        opacity={ 0.1 }
       />
     </g>
     <path
@@ -62,60 +64,60 @@ const SvgAdvantageIllustration = (props) => (
     </g>
     <g filter="url(#advantage__illustration_svg__i)">
       <rect
-        width={5.476}
-        height={21.013}
-        x={294.546}
-        y={171.939}
+        width={ 5.476 }
+        height={ 21.013 }
+        x={ 294.546 }
+        y={ 171.939 }
         fill="#24C28A"
-        rx={2.738}
+        rx={ 2.738 }
         transform="rotate(10.054 294.546 171.939)"
       />
     </g>
     <g filter="url(#advantage__illustration_svg__j)">
       <rect
-        width={16.867}
-        height={43.773}
-        x={282.782}
-        y={158.316}
+        width={ 16.867 }
+        height={ 43.773 }
+        x={ 282.782 }
+        y={ 158.316 }
         fill="#fff"
-        rx={8.433}
+        rx={ 8.433 }
         transform="rotate(10.054 282.782 158.316)"
       />
     </g>
     <g filter="url(#advantage__illustration_svg__k)">
       <rect
-        width={5.476}
-        height={21.013}
+        width={ 5.476 }
+        height={ 21.013 }
         fill="#24C28A"
-        rx={2.738}
+        rx={ 2.738 }
         transform="scale(-1 1) rotate(10.054 -1070.128 -969.195)"
       />
     </g>
     <g filter="url(#advantage__illustration_svg__l)">
       <rect
-        width={16.867}
-        height={43.773}
+        width={ 16.867 }
+        height={ 43.773 }
         fill="#fff"
-        rx={8.433}
+        rx={ 8.433 }
         transform="scale(-1 1) rotate(10.054 -998.5 -1042.004)"
       />
     </g>
     <mask
       id="advantage__illustration_svg__m"
-      width={23}
-      height={45}
-      x={181}
-      y={159}
+      width={ 23 }
+      height={ 45 }
+      x={ 181 }
+      y={ 159 }
       maskUnits="userSpaceOnUse"
       style={{
         maskType: 'alpha',
       }}
     >
       <rect
-        width={16.867}
-        height={43.773}
+        width={ 16.867 }
+        height={ 43.773 }
         fill="#fff"
-        rx={8.433}
+        rx={ 8.433 }
         transform="scale(-1 1) rotate(10.054 -998.5 -1042.004)"
       />
     </mask>
@@ -124,22 +126,22 @@ const SvgAdvantageIllustration = (props) => (
     </g>
     <mask
       id="advantage__illustration_svg__n"
-      width={23}
-      height={45}
-      x={276}
-      y={159}
+      width={ 23 }
+      height={ 45 }
+      x={ 276 }
+      y={ 159 }
       maskUnits="userSpaceOnUse"
       style={{
         maskType: 'alpha',
       }}
     >
       <rect
-        width={16.867}
-        height={43.773}
-        x={282.782}
-        y={158.316}
+        width={ 16.867 }
+        height={ 43.773 }
+        x={ 282.782 }
+        y={ 158.316 }
         fill="#fff"
-        rx={8.433}
+        rx={ 8.433 }
         transform="rotate(10.054 282.782 158.316)"
       />
     </mask>
@@ -149,7 +151,7 @@ const SvgAdvantageIllustration = (props) => (
     <path
       fill="#E6FCFF"
       d="M222.149 190.907c-5.392 0-8.108-4.25-8.798-6.147-.794-1.587-1.42-5.722.459-9.007 2.389-4.176 13.618-5.341 17.552.559 3.933 5.9 0 14.595-9.213 14.595ZM257.88 190.907c5.393 0 8.108-4.25 8.798-6.147.794-1.587 1.421-5.722-.458-9.007-2.389-4.176-13.619-5.341-17.552.559-3.934 5.9 0 14.595 9.212 14.595Z"
-      opacity={0.5}
+      opacity={ 0.5 }
     />
     <path
       fill="#111"
@@ -162,14 +164,14 @@ const SvgAdvantageIllustration = (props) => (
       d="M163.801 408.687c0-.555.45-1.004 1.005-1.004h154.392c.971 0 1.758.787 1.758 1.758a5.274 5.274 0 0 1-5.274 5.274H169.829a6.028 6.028 0 0 1-6.028-6.028Z"
     />
     <rect
-      width={157.155}
-      height={105.147}
-      x={163.801}
-      y={305.147}
+      width={ 157.155 }
+      height={ 105.147 }
+      x={ 163.801 }
+      y={ 305.147 }
       fill="url(#advantage__illustration_svg__o)"
-      rx={2.947}
+      rx={ 2.947 }
     />
-    <circle cx={242.378} cy={357.721} r={11.177} fill="#fff" />
+    <circle cx={ 242.378 } cy={ 357.721 } r={ 11.177 } fill="#fff" />
     <path
       fill="url(#advantage__illustration_svg__p)"
       fillRule="evenodd"
@@ -194,26 +196,26 @@ const SvgAdvantageIllustration = (props) => (
       d="M64.213 209.812c.294-5.015 1.294-9.213 2.127-11.547a39.228 39.228 0 0 1 2.72 11.606 39.212 39.212 0 0 1 11.605 2.72c-2.333.833-6.531 1.833-11.546 2.126-.28 5.324-1.65 9.461-2.78 11.58-1.374-3.85-2.002-7.81-2.165-11.54-3.73-.164-7.69-.791-11.54-2.166 2.118-1.13 6.255-2.5 11.58-2.779Z"
       clipRule="evenodd"
     />
-    <circle cx={94.682} cy={180.157} r={1.841} fill="#2F235A" />
-    <circle cx={136.94} cy={127.36} r={1.841} fill="#FE9076" />
-    <circle cx={44.321} cy={172.847} r={1.841} fill="#FFA400" />
-    <circle cx={126.847} cy={208.557} r={1.841} fill="#23BB86" />
+    <circle cx={ 94.682 } cy={ 180.157 } r={ 1.841 } fill="#2F235A" />
+    <circle cx={ 136.94 } cy={ 127.36 } r={ 1.841 } fill="#FE9076" />
+    <circle cx={ 44.321 } cy={ 172.847 } r={ 1.841 } fill="#FFA400" />
+    <circle cx={ 126.847 } cy={ 208.557 } r={ 1.841 } fill="#23BB86" />
     <path
       stroke="#FE9076"
       strokeLinecap="round"
-      strokeWidth={1.603}
+      strokeWidth={ 1.603 }
       d="M132.428 119.675c-4.163-5.718-15.89-17.931-29.494-21.04"
     />
     <path
       stroke="#FFA400"
       strokeLinecap="round"
-      strokeWidth={1.603}
+      strokeWidth={ 1.603 }
       d="M36.551 167.911c-6.153-3.487-21.878-9.766-35.551-6.978"
     />
     <path
       stroke="#23BB86"
       strokeLinecap="round"
-      strokeWidth={1.603}
+      strokeWidth={ 1.603 }
       d="M120.527 213.906c-3.153 2.782-10.739 10.684-15.858 20.031"
     />
     <path
@@ -240,300 +242,300 @@ const SvgAdvantageIllustration = (props) => (
       d="M414.567 209.812c-.294-5.015-1.293-9.213-2.127-11.547a39.244 39.244 0 0 0-2.72 11.606 39.214 39.214 0 0 0-11.605 2.72c2.333.833 6.531 1.833 11.546 2.126.28 5.324 1.649 9.461 2.779 11.58 1.375-3.85 2.003-7.81 2.166-11.54 3.73-.164 7.69-.791 11.54-2.166-2.118-1.13-6.255-2.5-11.579-2.779Z"
       clipRule="evenodd"
     />
-    <circle cx={1.841} cy={1.841} r={1.841} fill="#2F235A" transform="matrix(-1 0 0 1 385.939 178.316)" />
-    <circle cx={1.841} cy={1.841} r={1.841} fill="#FE9076" transform="matrix(-1 0 0 1 343.681 125.518)" />
-    <circle cx={1.841} cy={1.841} r={1.841} fill="#FFA400" transform="matrix(-1 0 0 1 436.301 171.005)" />
-    <circle cx={1.841} cy={1.841} r={1.841} fill="#23BB86" transform="matrix(-1 0 0 1 353.775 206.716)" />
+    <circle cx={ 1.841 } cy={ 1.841 } r={ 1.841 } fill="#2F235A" transform="matrix(-1 0 0 1 385.939 178.316)" />
+    <circle cx={ 1.841 } cy={ 1.841 } r={ 1.841 } fill="#FE9076" transform="matrix(-1 0 0 1 343.681 125.518)" />
+    <circle cx={ 1.841 } cy={ 1.841 } r={ 1.841 } fill="#FFA400" transform="matrix(-1 0 0 1 436.301 171.005)" />
+    <circle cx={ 1.841 } cy={ 1.841 } r={ 1.841 } fill="#23BB86" transform="matrix(-1 0 0 1 353.775 206.716)" />
     <path
       stroke="#FE9076"
       strokeLinecap="round"
-      strokeWidth={1.603}
+      strokeWidth={ 1.603 }
       d="M346.352 119.675c4.163-5.718 15.89-17.931 29.494-21.04"
     />
     <path
       stroke="#FFA400"
       strokeLinecap="round"
-      strokeWidth={1.603}
+      strokeWidth={ 1.603 }
       d="M442.229 167.911c6.153-3.487 21.878-9.766 35.551-6.978"
     />
     <path
       stroke="#23BB86"
       strokeLinecap="round"
-      strokeWidth={1.603}
+      strokeWidth={ 1.603 }
       d="M358.253 213.906c3.153 2.782 10.739 10.684 15.858 20.031"
     />
     <path
       fill="#FFBCBC"
       d="M269.426 56.174c-2.088-3.226-6.314-1.469-6.314 2.045 0 2.638 5.794 6.765 6.314 7.302.524-.537 6.03-4.664 6.03-7.302 0-3.487-3.938-5.27-6.03-2.045Z"
     />
-    <circle cx={269.284} cy={59.999} r={13.8} stroke="#F7F7F7" strokeWidth={0.65} />
+    <circle cx={ 269.284 } cy={ 59.999 } r={ 13.8 } stroke="#F7F7F7" strokeWidth={ 0.65 } />
     <path
       fill="#FFBCBC"
       d="M219.903 36.94c-1.848-2.854-5.588-1.299-5.588 1.81 0 2.336 5.128 5.988 5.588 6.463.464-.475 5.337-4.127 5.337-6.462 0-3.086-3.485-4.665-5.337-1.81Z"
     />
-    <circle cx={219.777} cy={40.326} r={12.213} stroke="#F7F7F7" strokeWidth={0.575} />
+    <circle cx={ 219.777 } cy={ 40.326 } r={ 12.213 } stroke="#F7F7F7" strokeWidth={ 0.575 } />
     <path
       fill="#FFBCBC"
       d="M252.586 15.965c-1.264-1.952-3.823-.888-3.823 1.238 0 1.597 3.508 4.096 3.823 4.42.317-.324 3.649-2.823 3.649-4.42 0-2.11-2.383-3.19-3.649-1.238Z"
     />
-    <circle cx={252.499} cy={18.281} r={8.353} stroke="#F7F7F7" strokeWidth={0.393} />
+    <circle cx={ 252.499 } cy={ 18.281 } r={ 8.353 } stroke="#F7F7F7" strokeWidth={ 0.393 } />
     <path
       fill="#FFBCBC"
       d="M194.856 5.101c-1.034-1.597-3.127-.727-3.127 1.013 0 1.307 2.869 3.351 3.127 3.617.259-.266 2.986-2.31 2.986-3.617 0-1.727-1.95-2.61-2.986-1.013Z"
     />
-    <circle cx={194.785} cy={6.996} r={6.835} stroke="#F7F7F7" strokeWidth={0.322} />
+    <circle cx={ 194.785 } cy={ 6.996 } r={ 6.835 } stroke="#F7F7F7" strokeWidth={ 0.322 } />
     <path
       fill="#FFBCBC"
       d="M189.769 79.987c-2.258-3.487-6.828-1.587-6.828 2.212 0 2.853 6.265 7.316 6.828 7.896.567-.58 6.521-5.043 6.521-7.896 0-3.77-4.259-5.7-6.521-2.212Z"
     />
-    <circle cx={189.615} cy={84.124} r={14.923} stroke="#F7F7F7" strokeWidth={0.703} />
+    <circle cx={ 189.615 } cy={ 84.124 } r={ 14.923 } stroke="#F7F7F7" strokeWidth={ 0.703 } />
     <defs>
       <linearGradient
         id="advantage__illustration_svg__a"
-        x1={390.781}
-        x2={393.428}
-        y1={158.321}
-        y2={334.189}
+        x1={ 390.781 }
+        x2={ 393.428 }
+        y1={ 158.321 }
+        y2={ 334.189 }
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#FFEFE0" />
-        <stop offset={1} stopColor="#FFBE99" />
+        <stop offset={ 1 } stopColor="#FFBE99" />
       </linearGradient>
       <linearGradient
         id="advantage__illustration_svg__b"
-        x1={242.275}
-        x2={229.875}
-        y1={200.208}
-        y2={448.546}
+        x1={ 242.275 }
+        x2={ 229.875 }
+        y1={ 200.208 }
+        y2={ 448.546 }
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#FF9F81" />
-        <stop offset={1} stopColor="#F53838" />
+        <stop offset={ 1 } stopColor="#F53838" />
       </linearGradient>
       <linearGradient
         id="advantage__illustration_svg__c"
-        x1={227.21}
-        x2={108.538}
-        y1={287.483}
-        y2={344.358}
+        x1={ 227.21 }
+        x2={ 108.538 }
+        y1={ 287.483 }
+        y2={ 344.358 }
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset={0.068} stopColor="#FFEFE0" />
-        <stop offset={1} stopColor="#FFBE99" />
+        <stop offset={ 0.068 } stopColor="#FFEFE0" />
+        <stop offset={ 1 } stopColor="#FFBE99" />
       </linearGradient>
       <linearGradient
         id="advantage__illustration_svg__d"
-        x1={238.204}
-        x2={240.284}
-        y1={172.975}
-        y2={239.361}
+        x1={ 238.204 }
+        x2={ 240.284 }
+        y1={ 172.975 }
+        y2={ 239.361 }
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#FFEFE0" />
-        <stop offset={1} stopColor="#FFBE99" />
+        <stop offset={ 1 } stopColor="#FFBE99" />
       </linearGradient>
       <linearGradient
         id="advantage__illustration_svg__e"
-        x1={238.204}
-        x2={235.29}
-        y1={172.975}
-        y2={248.606}
+        x1={ 238.204 }
+        x2={ 235.29 }
+        y1={ 172.975 }
+        y2={ 248.606 }
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#FFEFE0" />
-        <stop offset={1} stopColor="#FFBE99" />
+        <stop offset={ 1 } stopColor="#FFBE99" />
       </linearGradient>
       <linearGradient
         id="advantage__illustration_svg__g"
-        x1={241.661}
-        x2={241.661}
-        y1={137.583}
-        y2={217.302}
+        x1={ 241.661 }
+        x2={ 241.661 }
+        y1={ 137.583 }
+        y2={ 217.302 }
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#FFEFE0" />
-        <stop offset={1} stopColor="#FFBE99" />
+        <stop offset={ 1 } stopColor="#FFBE99" />
       </linearGradient>
       <linearGradient
         id="advantage__illustration_svg__o"
-        x1={274.829}
-        x2={216.724}
-        y1={226.235}
-        y2={434.729}
+        x1={ 274.829 }
+        x2={ 216.724 }
+        y1={ 226.235 }
+        y2={ 434.729 }
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset={0.017} stopColor="#fff" />
-        <stop offset={1} stopColor="#D7D7D7" />
+        <stop offset={ 0.017 } stopColor="#fff" />
+        <stop offset={ 1 } stopColor="#D7D7D7" />
       </linearGradient>
       <linearGradient
         id="advantage__illustration_svg__p"
-        x1={132.371}
-        x2={132.371}
-        y1={164.055}
-        y2={181.945}
+        x1={ 132.371 }
+        x2={ 132.371 }
+        y1={ 164.055 }
+        y2={ 181.945 }
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#FFE89E" />
-        <stop offset={1} stopColor="#FFBF1A" />
+        <stop offset={ 1 } stopColor="#FFBF1A" />
       </linearGradient>
       <linearGradient
         id="advantage__illustration_svg__q"
-        x1={104.93}
-        x2={104.93}
-        y1={143.575}
-        y2={155.482}
+        x1={ 104.93 }
+        x2={ 104.93 }
+        y1={ 143.575 }
+        y2={ 155.482 }
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#FFE89E" />
-        <stop offset={1} stopColor="#FFBF1A" />
+        <stop offset={ 1 } stopColor="#FFBF1A" />
       </linearGradient>
       <linearGradient
         id="advantage__illustration_svg__r"
-        x1={62.16}
-        x2={62.16}
-        y1={125.651}
-        y2={143.54}
+        x1={ 62.16 }
+        x2={ 62.16 }
+        y1={ 125.651 }
+        y2={ 143.54 }
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#FFE89E" />
-        <stop offset={1} stopColor="#FFBF1A" />
+        <stop offset={ 1 } stopColor="#FFBF1A" />
       </linearGradient>
       <linearGradient
         id="advantage__illustration_svg__s"
-        x1={66.649}
-        x2={66.649}
-        y1={201.249}
-        y2={227.569}
+        x1={ 66.649 }
+        x2={ 66.649 }
+        y1={ 201.249 }
+        y2={ 227.569 }
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#FFE89E" />
-        <stop offset={1} stopColor="#FFBF1A" />
+        <stop offset={ 1 } stopColor="#FFBF1A" />
       </linearGradient>
       <linearGradient
         id="advantage__illustration_svg__t"
-        x1={346.409}
-        x2={346.409}
-        y1={164.055}
-        y2={181.945}
+        x1={ 346.409 }
+        x2={ 346.409 }
+        y1={ 164.055 }
+        y2={ 181.945 }
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#FFE89E" />
-        <stop offset={1} stopColor="#FFBF1A" />
+        <stop offset={ 1 } stopColor="#FFBF1A" />
       </linearGradient>
       <linearGradient
         id="advantage__illustration_svg__u"
-        x1={373.85}
-        x2={373.85}
-        y1={143.575}
-        y2={155.482}
+        x1={ 373.85 }
+        x2={ 373.85 }
+        y1={ 143.575 }
+        y2={ 155.482 }
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#FFE89E" />
-        <stop offset={1} stopColor="#FFBF1A" />
+        <stop offset={ 1 } stopColor="#FFBF1A" />
       </linearGradient>
       <linearGradient
         id="advantage__illustration_svg__v"
-        x1={416.62}
-        x2={416.62}
-        y1={125.651}
-        y2={143.54}
+        x1={ 416.62 }
+        x2={ 416.62 }
+        y1={ 125.651 }
+        y2={ 143.54 }
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#FFE89E" />
-        <stop offset={1} stopColor="#FFBF1A" />
+        <stop offset={ 1 } stopColor="#FFBF1A" />
       </linearGradient>
       <linearGradient
         id="advantage__illustration_svg__w"
-        x1={412.131}
-        x2={412.131}
-        y1={201.249}
-        y2={227.569}
+        x1={ 412.131 }
+        x2={ 412.131 }
+        y1={ 201.249 }
+        y2={ 227.569 }
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#FFE89E" />
-        <stop offset={1} stopColor="#FFBF1A" />
+        <stop offset={ 1 } stopColor="#FFBF1A" />
       </linearGradient>
       <filter
         id="advantage__illustration_svg__h"
-        width={173.661}
-        height={125.955}
-        x={154.206}
-        y={77.685}
+        width={ 173.661 }
+        height={ 125.955 }
+        x={ 154.206 }
+        y={ 77.685 }
         colorInterpolationFilters="sRGB"
         filterUnits="userSpaceOnUse"
       >
-        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feFlood floodOpacity={ 0 } result="BackgroundImageFix" />
         <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-        <feOffset dy={4} />
-        <feGaussianBlur stdDeviation={17} />
+        <feOffset dy={ 4 } />
+        <feGaussianBlur stdDeviation={ 17 } />
         <feColorMatrix values="0 0 0 0 0.0386285 0 0 0 0 0.0648437 0 0 0 0 0.104167 0 0 0 0.13 0" />
         <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_93_3665" />
         <feBlend in="SourceGraphic" in2="effect1_dropShadow_93_3665" result="shape" />
       </filter>
       <filter
         id="advantage__illustration_svg__i"
-        width={76.189}
-        height={88.775}
-        x={257.313}
-        y={142.375}
+        width={ 76.189 }
+        height={ 88.775 }
+        x={ 257.313 }
+        y={ 142.375 }
         colorInterpolationFilters="sRGB"
         filterUnits="userSpaceOnUse"
       >
-        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feFlood floodOpacity={ 0 } result="BackgroundImageFix" />
         <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-        <feOffset dy={4} />
-        <feGaussianBlur stdDeviation={17} />
+        <feOffset dy={ 4 } />
+        <feGaussianBlur stdDeviation={ 17 } />
         <feColorMatrix values="0 0 0 0 0.0386285 0 0 0 0 0.0648437 0 0 0 0 0.104167 0 0 0 0.13 0" />
         <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_93_3665" />
         <feBlend in="SourceGraphic" in2="effect1_dropShadow_93_3665" result="shape" />
       </filter>
       <filter
         id="advantage__illustration_svg__j"
-        width={89.567}
-        height={111.363}
-        x={242.482}
-        y={129.658}
+        width={ 89.567 }
+        height={ 111.363 }
+        x={ 242.482 }
+        y={ 129.658 }
         colorInterpolationFilters="sRGB"
         filterUnits="userSpaceOnUse"
       >
-        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feFlood floodOpacity={ 0 } result="BackgroundImageFix" />
         <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-        <feOffset dy={4} />
-        <feGaussianBlur stdDeviation={17} />
+        <feOffset dy={ 4 } />
+        <feGaussianBlur stdDeviation={ 17 } />
         <feColorMatrix values="0 0 0 0 0.0386285 0 0 0 0 0.0648437 0 0 0 0 0.104167 0 0 0 0.13 0" />
         <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_93_3665" />
         <feBlend in="SourceGraphic" in2="effect1_dropShadow_93_3665" result="shape" />
       </filter>
       <filter
         id="advantage__illustration_svg__k"
-        width={76.189}
-        height={88.775}
-        x={146.68}
-        y={142.375}
+        width={ 76.189 }
+        height={ 88.775 }
+        x={ 146.68 }
+        y={ 142.375 }
         colorInterpolationFilters="sRGB"
         filterUnits="userSpaceOnUse"
       >
-        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feFlood floodOpacity={ 0 } result="BackgroundImageFix" />
         <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-        <feOffset dy={4} />
-        <feGaussianBlur stdDeviation={17} />
+        <feOffset dy={ 4 } />
+        <feGaussianBlur stdDeviation={ 17 } />
         <feColorMatrix values="0 0 0 0 0.0386285 0 0 0 0 0.0648437 0 0 0 0 0.104167 0 0 0 0.13 0" />
         <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_93_3665" />
         <feBlend in="SourceGraphic" in2="effect1_dropShadow_93_3665" result="shape" />
       </filter>
       <filter
         id="advantage__illustration_svg__l"
-        width={89.567}
-        height={111.363}
-        x={147.981}
-        y={129.658}
+        width={ 89.567 }
+        height={ 111.363 }
+        x={ 147.981 }
+        y={ 129.658 }
         colorInterpolationFilters="sRGB"
         filterUnits="userSpaceOnUse"
       >
-        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feFlood floodOpacity={ 0 } result="BackgroundImageFix" />
         <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-        <feOffset dy={4} />
-        <feGaussianBlur stdDeviation={17} />
+        <feOffset dy={ 4 } />
+        <feGaussianBlur stdDeviation={ 17 } />
         <feColorMatrix values="0 0 0 0 0.0386285 0 0 0 0 0.0648437 0 0 0 0 0.104167 0 0 0 0.13 0" />
         <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_93_3665" />
         <feBlend in="SourceGraphic" in2="effect1_dropShadow_93_3665" result="shape" />

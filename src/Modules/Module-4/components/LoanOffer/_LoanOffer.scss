@@ -1,0 +1,81 @@
+.loan-offer {
+  font-family: Ubuntu, Arial, sans-serif;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: auto;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 40px;
+  margin-bottom: 96px;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 28px;
+    background: #FFF;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.20), 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+    padding: 32px;
+  }
+
+  &__image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 18px;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    color: #1C1C1E;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0.32px;
+    margin-top: 14px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+  }
+
+  &__button {
+    width: 148px;
+    color: var(--White, #FFF);
+    text-align: center;
+    font-feature-settings: 'salt' on, 'liga' off;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0.32px;
+    border-radius: 8px;
+    background: var(--blue-3, #003CFF);
+    padding: 16px;
+    margin-top: 93px;
+  }
+}
+
+@media screen and (max-width: 1310px) {
+  .loan-offer {
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .loan-offer {
+    grid-template-columns: repeat(1, auto);
+    justify-content: center;
+
+    &__button {
+      margin-top: 40px;
+    }
+  }
+}
