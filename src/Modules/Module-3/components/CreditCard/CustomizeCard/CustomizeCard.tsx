@@ -8,6 +8,9 @@ import {
 } from '../../../../../common/assets/icon/moduleIcon/index';
 import './_CustomizeCard.scss';
 import { FormPrescording } from '../../../utils/Interface';
+import { useAppDispatch } from '../../../../Module-4/utils/hooks/redux';
+import { postPrescoringStepOne } from '../../../../Module-4/utils/store/Reducer/prescoringSlice';
+// import { useAppSelector } from '../../../../Module-4/utils/hooks/redux';
 
 
 const CustomizeCard = () => {
@@ -18,9 +21,13 @@ const CustomizeCard = () => {
     formState,
     handleSubmit,
   } = useForm<FormPrescording>({ mode: 'onBlur' });
+  const dispatch = useAppDispatch();
+
+  // const {isLoading} = useAppSelector((state) => state.postPrescoring);
 
   const onSubmit = (data: FormPrescording) => {
-    console.log('Form data submitted:', data);
+    console.log(data);
+    dispatch(postPrescoringStepOne(data));
   };
 
   const handleChangeAmount = (event: React.ChangeEvent<HTMLInputElement>) => {

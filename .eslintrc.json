@@ -540,7 +540,8 @@
     "react/jsx-props-no-spreading": "off",
     "@typescript-eslint/no-explicit-any\n": "off",
     "@typescript-eslint/no-unused-vars\n": "off",
-    "react/no-array-index-key": "off"
+    "react/no-array-index-key": "off",
+    "@typescript-eslint/default-param-last": "off"
 
   },
   "overrides": [

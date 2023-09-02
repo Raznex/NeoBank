@@ -107,6 +107,7 @@ const App = () => {
         setCards(validCards);
         setIsLoading(false);
       } catch (error) {
+        console.log(error);
       }
     }
 
