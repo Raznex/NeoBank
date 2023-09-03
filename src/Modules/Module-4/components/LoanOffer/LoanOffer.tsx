@@ -1,60 +1,38 @@
 import React from 'react';
 
-import {
-  CheckFill,
-  CloseRoundFill,
-} from '../../../../common/assets/icon/moduleIcon/index';
-import surprise from '../../../../common/assets/images/SurpriseImage 1.png';
 import './_LoanOffer.scss';
+import { Offer } from '../../../Module-3/utils/Interface';
+import CardOffer from './CardOffer/CardOffer';
+import { useAppSelector } from '../../utils/hooks/redux';
+import PreloaderToCards from '../../../Module-3/components/Preloader/PreloaderToCards/PreloaderToCards';
 
 
-const LoanOffer = () => (
-  <div className="loan-offer">
-    <article className="loan-offer__card">
-      <img src={ surprise } alt="Box" className="loan-offer__image" />
-      <p className="loan-offer__text">Requested amount: 200&nbsp;000&nbsp;₽</p>
-      <p className="loan-offer__text">Total amount: 200&nbsp;000&nbsp;₽</p>
-      <p className="loan-offer__text">For 24 months</p>
-      <p className="loan-offer__text">Monthly payment: 9&nbsp;697&nbsp;₽</p>
-      <p className="loan-offer__text">Your rate: 15%</p>
-      <p className="loan-offer__text">Insurance included <CloseRoundFill className="loan-offer__icon" /></p>
-      <p className="loan-offer__text">Salary client <CloseRoundFill className="loan-offer__icon" /></p>
-      <button type="button" className="loan-offer__button">Select</button>
-    </article>
-    <article className="loan-offer__card">
-      <img src={ surprise } alt="Box" className="loan-offer__image" />
-      <p className="loan-offer__text">Requested amount: 200&nbsp;000&nbsp;₽</p>
-      <p className="loan-offer__text">Total amount: 200&nbsp;000&nbsp;₽</p>
-      <p className="loan-offer__text">For 24 months</p>
-      <p className="loan-offer__text">Monthly payment: 9&nbsp;788&nbsp;₽</p>
-      <p className="loan-offer__text">Your rate: 11%</p>
-      <p className="loan-offer__text">Insurance included <CheckFill className="loan-offer__icon" /></p>
-      <p className="loan-offer__text">Salary client <CloseRoundFill className="loan-offer__icon" /></p>
-      <button type="button" className="loan-offer__button">Select</button>
-    </article>
-    <article className="loan-offer__card">
-      <img src={ surprise } alt="Box" className="loan-offer__image" />
-      <p className="loan-offer__text">Requested amount: 200&nbsp;000&nbsp;₽</p>
-      <p className="loan-offer__text">Total amount: 200&nbsp;000&nbsp;₽</p>
-      <p className="loan-offer__text">For 24 months</p>
-      <p className="loan-offer__text">Monthly payment: 9&nbsp;603&nbsp;₽</p>
-      <p className="loan-offer__text">Your rate: 14%</p>
-      <p className="loan-offer__text">Insurance included <CloseRoundFill className="loan-offer__icon" /></p>
-      <p className="loan-offer__text">Salary client <CheckFill className="loan-offer__icon" /></p>
-      <button type="button" className="loan-offer__button">Select</button>
-    </article>
-    <article className="loan-offer__card">
-      <img src={ surprise } alt="Box" className="loan-offer__image" />
-      <p className="loan-offer__text">Requested amount: 200&nbsp;000&nbsp;₽</p>
-      <p className="loan-offer__text">Total amount: 200&nbsp;000&nbsp;₽</p>
-      <p className="loan-offer__text">For 24 months</p>
-      <p className="loan-offer__text">Monthly payment: 9&nbsp;690&nbsp;₽</p>
-      <p className="loan-offer__text">Your rate: 10%</p>
-      <p className="loan-offer__text">Insurance included <CheckFill className="loan-offer__icon" /></p>
-      <p className="loan-offer__text">Salary client <CheckFill className="loan-offer__icon" /></p>
-      <button type="button" className="loan-offer__button">Select</button>
-    </article>
-  </div>
-);
+interface LoanOffersProps {
+  offers: Offer[];
+}
+
+const LoanOffer: React.FC<LoanOffersProps> = ({ offers }) => {
+  const { isLoading } = useAppSelector((state) => state.prescoringSlice);
+  const offerTakes = localStorage.getItem('offerTakes') || 'null';
+  return (
+    isLoading ? <PreloaderToCards /> : (
+      <>
+        { offerTakes
+          ? (
+            <div className="loan-offer__success">
+              <p className="loan-offer__text-email">The preliminary decision has been sent to your email.</p>
+              <p className="loan-offer__subtext-email">In&nbsp;the letter you can get acquainted with
+                the preliminary decision on&nbsp;the credit card.
+              </p>
+            </div>
+          ) : (
+            <div className="loan-offer">
+              { offers.map((offer) => <CardOffer key={ offer.monthlyPayment } offer={ offer } />) }
+            </div>
+          ) }
+      </>
+    )
+  );
+};
 
 export default LoanOffer;

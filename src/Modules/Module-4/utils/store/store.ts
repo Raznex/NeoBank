@@ -1,13 +1,10 @@
-import { Action, combineReducers, configureStore, ThunkAction } from '@reduxjs/toolkit';
+import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
 
-import postPrescoring from './Reducer/prescoringSlice';
+import prescoringSlice from './Reducer/prescoringSlice';
 
 
-export const rootReducer = combineReducers({
-  postPrescoring,
-});
 export const setupStore = configureStore({
-  reducer: { rootReducer },
+  reducer: { prescoringSlice },
 });
 
 export type RootState = ReturnType<typeof setupStore.getState>;

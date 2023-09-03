@@ -1,0 +1,219 @@
+.applicationID {
+  font-family: Ubuntu, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-radius: 28px;
+  background: #FFF;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.20), 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  margin: 24px 0 96px;
+  padding: 32px;
+
+  &__lid {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    color: #000;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+  }
+
+  &__steps {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    margin-left: 80px;
+  }
+
+  &__personal-information {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 18px;
+  }
+
+  &__text {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    width: 100%;
+    text-align: left;
+    margin: 32px 0 15px;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  &__input-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__lable {
+    color: #1A202C;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    margin-bottom: 8px;
+    cursor: default;
+  }
+
+  &__lable-span {
+    color: #F00;
+  }
+
+  &__input {
+    width: 100%;
+    color: black;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+    border-radius: 6px;
+    border: 1px solid rgba(128, 128, 128, 0.20);
+    background: #F9F5E3;
+    padding: 13px 16px;
+    position: relative;
+
+    &_select {
+      appearance: none;
+      outline: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    &_date::-webkit-calendar-picker-indicator {
+      background: transparent;
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+
+  &__input_error {
+    border: 2px solid #FF5631;
+  }
+
+  &__input:focus {
+    border: 2px solid #5B35D5;
+  }
+
+  &__input.placeholder {
+    color: #808080;
+  }
+
+  &__options {
+    color: #000;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 14px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 34px;
+    right: 8px;
+    z-index: 2;
+  }
+
+  &__expand {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 34px;
+    right: 8px;
+    pointer-events: none;
+  }
+
+  &__span {
+    width: 100%;
+    margin: 3px 0 0;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 16px;
+    color: #FF5631;
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &__button {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: var(--blue-3, #003CFF);
+    width: 148px;
+    height: 48px;
+    padding: 8px;
+    margin-top: 24px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out 0.1s;
+  }
+
+  &__button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+  &__button-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .applicationID {
+    &__lable {
+      font-size: 13px;
+      line-height: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .applicationID {
+
+    &__title {
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    &__personal-information {
+      flex-wrap: wrap;
+    }
+  }
+}

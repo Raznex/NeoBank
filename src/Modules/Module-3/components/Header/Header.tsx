@@ -24,7 +24,7 @@ const Header: React.FC = () => {
         <nav className={ `header__menu ${isOpen ? 'header__menu_active' : ''}` }>
           <ul className="header__links">
             <li>
-              <a href="/credit-card" className={ `header__link ${location.pathname === '/credit-card' ? 'header__link_active' : ''}` }>Credit
+              <a href="/loan" className={ `header__link ${location.pathname === '/loan' ? 'header__link_active' : ''}` }>Credit
                 card
               </a>
             </li>

@@ -7,6 +7,40 @@ export const currencyPairs = [
   { from: 'NZD', to: 'RUB' },
 ];
 
+export const termConst = [
+  { value: 6, text: '6 month' }, { value: 12, text: '12 month' }, { value: 18, text: '18 month' }, { value: 24, text: '24 month' },
+];
+
+export const genderConst = [
+  { value: '', text: '' },
+  { value: 'MALE', text: 'Male' },
+  { value: 'FEMALE', text: 'Female' },
+];
+
+export const materialConst = [
+  { value: '', text: ' ' },
+  { value: 'MARRIED', text: 'Married' },
+  { value: 'DIVORCED', text: 'Discovered' },
+  { value: 'SINGLE', text: 'Single' },
+  { value: 'WIDOW_WIDOWER', text: 'Widow Widower' },
+];
+
+export const employmentConst = [
+  { value: 'UNEMPLOYED', text: '' },
+  { value: 'UNEMPLOYED', text: 'Unemployed' },
+  { value: 'SELF_EMPLOYED', text: 'Self Employed' },
+  { value: 'EMPLOYED', text: 'Employed' },
+  { value: 'BUSINESS_OWNER', text: 'Bussiness_owner' },
+];
+
+export const dependentConst = [
+  { value: '', text: '' },
+  { value: 0, text: '0' },
+  { value: 1, text: '1' },
+  { value: 2, text: '2' },
+  { value: 3, text: '3' },
+];
+
 const intervalMinutes = 15;
 export const intervalMilliseconds = intervalMinutes * 60 * 1000;
 

@@ -279,10 +279,7 @@
     // https://eslint.org/docs/latest/rules/eol-last
     "eol-last": "warn",
     // https://eslint.org/docs/latest/rules/linebreak-style
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
+    "linebreak-style": 0,
     // https://eslint.org/docs/latest/rules/no-debugger
     "no-debugger": "warn",
 //    "no-console": [
@@ -401,7 +398,7 @@
     "no-unused-vars": "off",
     // https://typescript-eslint.io/rules/no-unused-vars/
     "@typescript-eslint/no-unused-vars": [
-      "error",
+      "warn",
       {
         "varsIgnorePattern": "^(temp|_)",
         "argsIgnorePattern": "^_"
@@ -539,7 +536,6 @@
     "no-useless-catch": 0,
     "react/jsx-props-no-spreading": "off",
     "@typescript-eslint/no-explicit-any\n": "off",
-    "@typescript-eslint/no-unused-vars\n": "off",
     "react/no-array-index-key": "off",
     "@typescript-eslint/default-param-last": "off"
 
