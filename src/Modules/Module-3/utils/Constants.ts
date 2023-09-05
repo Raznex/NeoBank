@@ -41,6 +41,14 @@ export const dependentConst = [
   { value: 3, text: '3' },
 ];
 
+export const positionConst = [
+  { value: '', text: '' },
+  { value: 'WORKER', text: 'Worker' },
+  { value: 'MID_MANAGER', text: 'Mid manager' },
+  { value: 'TOP_MANAGER', text: 'Top manager' },
+  { value: 'OWNER', text: 'Owner' },
+];
+
 const intervalMinutes = 15;
 export const intervalMilliseconds = intervalMinutes * 60 * 1000;
 

@@ -2,7 +2,7 @@
   font-family: Ubuntu, Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   width: 100%;
   border-radius: 28px;
   background: #FFF;
@@ -215,5 +215,6 @@
     &__personal-information {
       flex-wrap: wrap;
     }
+
   }
 }

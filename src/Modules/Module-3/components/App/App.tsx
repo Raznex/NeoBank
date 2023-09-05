@@ -12,6 +12,8 @@ import CreditCard from '../CreditCard/CreditCard';
 import PageNotFound from '../PageNotFound/PageNotFound';
 import { Pair, ExchangeResult, CurrencyData, NewsCards } from '../../utils/Interface';
 import LoanApplicationId from '../../../Module-4/components/LoanApplicationID/LoanApplicationID';
+import LoanDocument from '../../../Module-4/components/LoanDocument/LoanDocument';
+import LoanSign from '../../../Module-4/components/LoanSign/LoanSign';
 
 
 const App = () => {
@@ -167,6 +169,8 @@ const App = () => {
           />
           <Route path="/loan" element={ <CreditCard /> } />
           <Route path="/loan/applicationId" element={ <LoanApplicationId /> } />
+          <Route path="/loan/applicationId/document" element={ <LoanDocument /> } />
+          <Route path="/loan/applicationId/document/sign" element={ <LoanSign /> } />
           <Route path="*" element={ <PageNotFound /> } />
         </Routes>
       </main>
