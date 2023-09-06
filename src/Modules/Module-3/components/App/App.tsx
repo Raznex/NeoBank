@@ -14,6 +14,7 @@ import { Pair, ExchangeResult, CurrencyData, NewsCards } from '../../utils/Inter
 import LoanApplicationId from '../../../Module-4/components/LoanApplicationID/LoanApplicationID';
 import LoanDocument from '../../../Module-4/components/LoanDocument/LoanDocument';
 import LoanSign from '../../../Module-4/components/LoanSign/LoanSign';
+import LoanCode from '../../../Module-4/components/LoanCode/LoanCode';
 
 
 const App = () => {
@@ -171,6 +172,7 @@ const App = () => {
           <Route path="/loan/applicationId" element={ <LoanApplicationId /> } />
           <Route path="/loan/applicationId/document" element={ <LoanDocument /> } />
           <Route path="/loan/applicationId/document/sign" element={ <LoanSign /> } />
+          <Route path="/loan/applicationId/code" element={ <LoanCode /> } />
           <Route path="*" element={ <PageNotFound /> } />
         </Routes>
       </main>
