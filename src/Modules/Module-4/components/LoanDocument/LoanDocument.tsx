@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// import { useParams } from 'react-router-dom';
 
 import './_LoanDocument.scss';
 import DenyPopup from '../DenyPopup/DenyPopup';
@@ -9,6 +10,7 @@ const LoanDocument = () => {
   const openPopup = () => {
     setIsPopupOpen(true);
   };
+  // const { applicationId } = useParams();
 
   return (
     <>

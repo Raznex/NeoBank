@@ -1,0 +1,19 @@
+export enum AppStatus {
+  PREAPPROVAL = 'PREAPPROVAL',
+  CLIENT_DENIED = 'CLIENT_DENIED',
+  APPROVED = 'APPROVED',
+  CC_DENIED = 'CC_DENIED',
+  CC_APPROVED = 'CC_APPROVED',
+  PREPARE_DOCUMENTS = 'PREPARE_DOCUMENTS',
+  DOCUMENT_CREATED = 'DOCUMENT_CREATED',
+  CREDIT_ISSUED = 'CREDIT_ISSUED',
+}
+
+export enum SortValue {
+  NUMBER = 'number',
+  TOTAL_PAYMENT = 'totalPayment',
+  DEBT_PAYMENY = 'debtPayment',
+  INTEREST_PAYMENT = 'interestPayment',
+  REMAINING_DEBT = 'remainingDebt',
+  DATE = 'date',
+}

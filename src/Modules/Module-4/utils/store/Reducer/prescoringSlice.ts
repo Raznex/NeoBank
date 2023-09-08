@@ -1,22 +1,27 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 
-import { FormPrescording, Offer } from '../../../../Module-3/utils/Interface';
+import { FormPrescording, IPostScoring, Offer } from '../../../../Module-3/utils/Interface';
 import ApplicationServices from '../../Api/ApplicationService';
+import { AppStatus } from '../../Options/Enum';
 
 
 interface CardSliceState {
   isFirstStepClose: boolean;
+  isSecondStepClose: boolean;
   isLoading: boolean;
   selectedOffer: boolean;
   error: string;
+  status: AppStatus;
 }
 
 const initialState: CardSliceState = {
   isFirstStepClose: false,
+  isSecondStepClose: false,
   isLoading: false,
   selectedOffer: false,
   error: '',
+  status: AppStatus.PREAPPROVAL,
 };
 
 
@@ -38,6 +43,23 @@ export const postSelectedOffer = createAsyncThunk(
   },
 );
 
+export const postScoringData = createAsyncThunk(
+  'prescoringSlice/postScoringData',
+  async ({ data, applicationId }: IPostScoring) => {
+    const { postScoringStep2 } = ApplicationServices();
+    const response = await postScoringStep2(data, applicationId);
+    return response;
+  },
+);
+
+export const getStatusOffer = createAsyncThunk(
+  'prescoringSlice/getStatusOffer',
+  async (applicationId: string) => {
+    const { getOfferStatus } = ApplicationServices();
+    const response = await getOfferStatus(applicationId);
+    return response;
+  },
+);
 
 export const prescoringSlice = createSlice({
   name: 'postP',
@@ -61,7 +83,22 @@ export const prescoringSlice = createSlice({
       .addCase(postSelectedOffer.fulfilled, (state) => {
         state.isLoading = false;
         state.selectedOffer = true;
-        localStorage.setItem('offerTakes', JSON.stringify('Выбран оффер'));
+      })
+      .addCase(postScoringData.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(postScoringData.fulfilled, (state) => {
+        state.isLoading = false;
+        state.status = AppStatus.CC_DENIED;
+        state.isSecondStepClose = true;
+      })
+      .addCase(getStatusOffer.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getStatusOffer.fulfilled, (state, action) => {
+        if (action.payload.status !== AppStatus.PREAPPROVAL) state.selectedOffer = true;
+        state.status = action.payload.status;
+        state.isLoading = false;
       });
   },
 });

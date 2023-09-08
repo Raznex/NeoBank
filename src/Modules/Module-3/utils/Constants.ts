@@ -26,7 +26,7 @@ export const materialConst = [
 ];
 
 export const employmentConst = [
-  { value: 'UNEMPLOYED', text: '' },
+  { value: '', text: '' },
   { value: 'UNEMPLOYED', text: 'Unemployed' },
   { value: 'SELF_EMPLOYED', text: 'Self Employed' },
   { value: 'EMPLOYED', text: 'Employed' },

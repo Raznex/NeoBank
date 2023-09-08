@@ -2,11 +2,16 @@ import React from 'react';
 
 import card from '../../../../../common/assets/images/cardImage1 1.png';
 import './_Promotion.scss';
+import { getLink } from '../../../../Module-4/utils/Options/getLink';
+import { useAppSelector } from '../../../../Module-4/utils/hooks/redux';
 
 
 const Promotion = () => {
-  const offers = localStorage.getItem('offers') || 'null';
-  const offerTakes = localStorage.getItem('offerTakes') || 'null';
+  const offers = localStorage.getItem('offers') || null;
+  const offersData = offers ? JSON.parse(offers) : null;
+  const { status, selectedOffer, isFirstStepClose } = useAppSelector((state) => state.prescoringSlice);
+  const navLink = offersData ? getLink(offersData[0].applicationId, status) : null;
+  console.log(navLink);
   return (
     <section className="promotion">
       <div className="promotion__container">
@@ -33,16 +38,18 @@ const Promotion = () => {
             <p className="promotion__hover-text">Promotion valid until December&nbsp;31, 2022.</p>
           </li>
         </ul>
-        { offers ? (
-          <button type="button" className={ offerTakes ? 'promotion__button_hidden' : 'promotion__button' }>Choose an offer
+        { offers !== null ? (
+          <button type="button" className={ selectedOffer ? 'promotion__button_hidden' : 'promotion__button' }>Choose an offer
           </button>
         ) : (
-          <button type="button" className={ offerTakes ? 'promotion__button_hidden' : 'promotion__button' }>Apply for card
+          <button type="button" className={ selectedOffer ? 'promotion__button_hidden' : 'promotion__button' }>Apply for card
           </button>
         ) }
-        <button type="button" className={ offerTakes ? 'promotion__button promotion__button_continue' : 'promotion__button_hidden' }>Continue
-          registration
-        </button>
+        { navLink ? (
+          <a href={ navLink } className={ offers ? 'promotion__button promotion__button_continue' : 'promotion__button_hidden' }>Continue
+            registration
+          </a>
+        ) : null }
       </div>
       <img src={ card } alt="card" className="promotion__image" />
     </section>

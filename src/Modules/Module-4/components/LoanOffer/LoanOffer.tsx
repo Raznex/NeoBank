@@ -12,12 +12,12 @@ interface LoanOffersProps {
 }
 
 const LoanOffer: React.FC<LoanOffersProps> = ({ offers }) => {
-  const { isLoading } = useAppSelector((state) => state.prescoringSlice);
-  const offerTakes = localStorage.getItem('offerTakes') || 'null';
+  const { isLoading, selectedOffer } = useAppSelector((state) => state.prescoringSlice);
+
   return (
     isLoading ? <PreloaderToCards /> : (
       <>
-        { offerTakes
+        { selectedOffer
           ? (
             <div className="loan-offer__success">
               <p className="loan-offer__text-email">The preliminary decision has been sent to your email.</p>
