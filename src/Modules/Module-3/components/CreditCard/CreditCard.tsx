@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { scroller } from 'react-scroll';
 
 import Promotion from './Promotion/Promotion';
 import ListTabs from './Tabs/Tabs';
@@ -14,17 +16,26 @@ const CreditCard = () => {
   const { isFirstStepClose } = useAppSelector(((state) => state.prescoringSlice));
   const dispatch = useAppDispatch();
 
+
   useEffect(() => {
     if (offers) {
       dispatch(getStatusOffer(String(offers[0].applicationId)));
     }
   }, []);
 
+  const handleScrollToAboutMe = () => {
+    scroller.scrollTo('loanOffer', {
+      smooth: true,
+      duration: 500,
+      offset: 100,
+    });
+  };
+
   return (
     <>
-      <Promotion />
+      <Promotion handleButtonClick={ handleScrollToAboutMe } />
       <ListTabs />
-      <Steps />
+      <Steps id="loanOffer" />
       { offers || isFirstStepClose ? <LoanOffer offers={ offers } /> : <CustomizeCard /> }
     </>
   );

@@ -1,26 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import './_LoanApplicationId.scss';
 import { CheckFill, CloseRoundFill, ExpandDown } from '../../../../common/assets/icon/moduleIcon';
 import { ScoringForm } from '../../../Module-3/utils/Interface';
 import {
-  genderConst,
-  materialConst,
   dependentConst,
   employmentConst,
+  genderConst,
+  materialConst,
   positionConst,
 } from '../../../Module-3/utils/Constants';
 import MessageApplication from '../Message/MessageApplication';
 import { useAppDispatch, useAppSelector } from '../../utils/hooks/redux';
-import { postScoringData } from '../../utils/store/Reducer/prescoringSlice';
+import { getStatusOffer, postScoringData } from '../../utils/store/Reducer/prescoringSlice';
 import PageNotFound from '../../../Module-3/components/PageNotFound/PageNotFound';
+import { AppStatus } from '../../utils/Options/Enum';
 
 
 const LoanApplicationId = () => {
   const [isId, setIsId] = useState(false);
-  const { isSecondStepClose } = useAppSelector(((state) => state.prescoringSlice));
+  const { isSecondStepClose, status } = useAppSelector(((state) => state.prescoringSlice));
   const {
     register,
     formState: { errors },
@@ -29,12 +30,18 @@ const LoanApplicationId = () => {
   } = useForm<ScoringForm>({ mode: 'onBlur' });
   const dispatch = useAppDispatch();
   const { applicationId } = useParams();
-  const offers = localStorage.getItem('offers') || 'null';
+  const offers = localStorage.getItem('offers') || null;
   const offersData = offers ? JSON.parse(offers) : null;
   const applicationNum = Number(applicationId);
+  const navigate = useNavigate();
+
   useEffect(() => {
-    if (offersData[0].applicationId === applicationNum) {
-      setIsId(true);
+    if (offers !== null) {
+      if (offersData[0].applicationId === applicationNum) {
+        setIsId(true);
+      }
+    } else {
+      navigate('/loan');
     }
   }, [window.onload]);
 
@@ -43,7 +50,14 @@ const LoanApplicationId = () => {
     if (applicationId !== undefined) {
       dispatch(postScoringData({ data, applicationId }));
     }
+    setTimeout(() => {
+      dispatch(getStatusOffer(String(offersData[0].applicationId)));
+    }, 10000);
+    if (status === AppStatus.CC_DENIED) {
+      navigate('/loan');
+    }
   };
+
 
   return (
     !isId ? <PageNotFound /> : (

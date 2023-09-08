@@ -89,7 +89,6 @@ export const prescoringSlice = createSlice({
       })
       .addCase(postScoringData.fulfilled, (state) => {
         state.isLoading = false;
-        state.status = AppStatus.CC_DENIED;
         state.isSecondStepClose = true;
       })
       .addCase(getStatusOffer.pending, (state) => {
@@ -97,6 +96,14 @@ export const prescoringSlice = createSlice({
       })
       .addCase(getStatusOffer.fulfilled, (state, action) => {
         if (action.payload.status !== AppStatus.PREAPPROVAL) state.selectedOffer = true;
+        if (action.payload.status === AppStatus.CC_DENIED) {
+          state.selectedOffer = false;
+          // localStorage.removeItem('offers');
+          state.isFirstStepClose = false;
+          state.isSecondStepClose = false;
+          state.status = AppStatus.CC_DENIED;
+        }
+        console.log(action.payload);
         state.status = action.payload.status;
         state.isLoading = false;
       });

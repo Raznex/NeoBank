@@ -6,12 +6,15 @@ import { getLink } from '../../../../Module-4/utils/Options/getLink';
 import { useAppSelector } from '../../../../Module-4/utils/hooks/redux';
 
 
-const Promotion = () => {
+interface PromotionProps {
+  handleButtonClick: () => void;
+}
+
+const Promotion: React.FC<PromotionProps> = ({ handleButtonClick }) => {
   const offers = localStorage.getItem('offers') || null;
   const offersData = offers ? JSON.parse(offers) : null;
-  const { status, selectedOffer, isFirstStepClose } = useAppSelector((state) => state.prescoringSlice);
+  const { status, selectedOffer } = useAppSelector((state) => state.prescoringSlice);
   const navLink = offersData ? getLink(offersData[0].applicationId, status) : null;
-  console.log(navLink);
   return (
     <section className="promotion">
       <div className="promotion__container">
@@ -39,14 +42,22 @@ const Promotion = () => {
           </li>
         </ul>
         { offers !== null ? (
-          <button type="button" className={ selectedOffer ? 'promotion__button_hidden' : 'promotion__button' }>Choose an offer
+          <button
+            type="button"
+            className={ selectedOffer ? 'promotion__button_hidden' : 'promotion__button' }
+            onClick={ handleButtonClick }
+          >Choose an offer
           </button>
         ) : (
-          <button type="button" className={ selectedOffer ? 'promotion__button_hidden' : 'promotion__button' }>Apply for card
+          <button
+            type="button"
+            className={ selectedOffer ? 'promotion__button_hidden' : 'promotion__button' }
+            onClick={ handleButtonClick }
+          >Apply for card
           </button>
         ) }
         { navLink ? (
-          <a href={ navLink } className={ offers ? 'promotion__button promotion__button_continue' : 'promotion__button_hidden' }>Continue
+          <a href={ navLink } className={ selectedOffer ? 'promotion__button promotion__button_continue' : 'promotion__button_hidden' }>Continue
             registration
           </a>
         ) : null }

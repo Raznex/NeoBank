@@ -3,8 +3,12 @@ import React from 'react';
 import './_Steps.scss';
 
 
-const Steps = () => (
-  <section className="steps">
+interface StepsProps {
+  id: string;
+}
+
+const Steps = ({ id }: StepsProps) => (
+  <section className="steps" id={ id }>
     <h2 className="steps__title">How to&nbsp;get a&nbsp;card</h2>
     <div className="steps__container">
       <article className="steps__direction">

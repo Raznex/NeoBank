@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 import './_LoanDocument.scss';
 import DenyPopup from '../DenyPopup/DenyPopup';
+import MessageApplication from '../Message/MessageApplication';
 
 
 const LoanDocument = () => {
