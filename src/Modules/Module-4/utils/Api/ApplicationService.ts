@@ -1,4 +1,5 @@
 import { useRequest } from '../hooks/Request';
+import { transformScoringData } from './TransformData';
 
 import type { FormPrescording, Offer, ScoringForm } from '../../../Module-3/utils/Interface';
 
@@ -18,7 +19,7 @@ export const ApplicationServices = () => {
     return res;
   };
   const postScoringStep2 = async (formData: ScoringForm, applicationId: string) => {
-    const body = JSON.stringify(formData);
+    const body = JSON.stringify(transformScoringData(formData));
     const res = await request(
       `${API_URL}/application/registration/${applicationId}`,
       'PUT',
