@@ -96,3 +96,12 @@ export const cardCreditQuestions = [
     answer: 'For each reporting period from the 7th day of the previous month to the 6th day of the current month inclusive, a statement is generated for the credit card. The statement contains information on the amount and timing of the minimum payment, as well as the total amount of debt as of the date of issue.',
   },
 ];
+
+export const tableSort = [
+  { name: 'NUMBER', sort: 'number' },
+  { name: 'DATE', sort: 'date' },
+  { name: 'TOTAL PAYMENT', sort: 'totalPayment' },
+  { name: 'INTEREST PAYMENT', sort: 'interestPayment' },
+  { name: 'DEBT PAYMENT', sort: 'debtPayment' },
+  { name: 'REMAINING DEBT', sort: 'remainingDebt' },
+];

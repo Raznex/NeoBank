@@ -20,6 +20,7 @@ export const ApplicationServices = () => {
   };
   const postScoringStep2 = async (formData: ScoringForm, applicationId: string) => {
     const body = JSON.stringify(transformScoringData(formData));
+    console.log(body);
     const res = await request(
       `${API_URL}/application/registration/${applicationId}`,
       'PUT',

@@ -50,6 +50,15 @@
     &_send {
       background: var(--blue-3, #003CFF);
     }
+
+    &_disabled {
+      background: #999999;
+
+      &:hover {
+        cursor: default;
+        opacity: 1;
+      }
+    }
   }
 
   &__input {

@@ -1,0 +1,18 @@
+.string-pay {
+  font-family: Ubuntu, Arial, sans-serif;
+  display: flex;
+  color: #1A202C;
+
+  &__text {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 0px;
+    letter-spacing: 0.24px;
+    border-bottom: 1px solid #E2E8F0;
+    height: 40px;
+    width: 200vh;
+  }
+}

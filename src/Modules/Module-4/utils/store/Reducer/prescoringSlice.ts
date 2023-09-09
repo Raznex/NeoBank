@@ -1,9 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 
-import { FormPrescording, IPostScoring, Offer } from '../../../../Module-3/utils/Interface';
+import { FormPrescording, IPostScoring, Offer, Payment } from '../../../../Module-3/utils/Interface';
 import ApplicationServices from '../../Api/ApplicationService';
-import { AppStatus } from '../../Options/Enum';
+import { AppStatus, SortValue } from '../../Options/Enum';
 
 
 interface CardSliceState {
@@ -12,6 +12,9 @@ interface CardSliceState {
   isLoading: boolean;
   selectedOffer: boolean;
   error: string;
+  isAscending: boolean;
+  monthlyPaymentsSortColumn: SortValue;
+  monthlyPayments: Payment[];
   status: AppStatus;
 }
 
@@ -20,7 +23,10 @@ const initialState: CardSliceState = {
   isSecondStepClose: false,
   isLoading: false,
   selectedOffer: false,
+  isAscending: false,
+  monthlyPaymentsSortColumn: SortValue.NUMBER,
   error: '',
+  monthlyPayments: [],
   status: AppStatus.PREAPPROVAL,
 };
 
@@ -61,10 +67,42 @@ export const getStatusOffer = createAsyncThunk(
   },
 );
 
+const checkSortValue = (sortValue: SortValue) => {
+  if (sortValue === SortValue.NUMBER
+    || sortValue === SortValue.TOTAL_PAYMENT
+    || sortValue === SortValue.DEBT_PAYMENY
+    || sortValue === SortValue.INTEREST_PAYMENT
+    || sortValue === SortValue.REMAINING_DEBT) {
+    return true;
+  }
+  return false;
+};
+
 export const prescoringSlice = createSlice({
   name: 'postP',
   initialState,
   reducers: {
+    monthlyPaymentsIncSort: (state, action) => {
+      const sortValue: SortValue = action.payload;
+      const isAscending = state.monthlyPaymentsSortColumn === sortValue ? !state.isAscending : true; // Флаг направления сортировки
+
+      if (checkSortValue(sortValue)) {
+        state.monthlyPayments = state.monthlyPayments.sort((a, b) => {
+          const aValue = Number(a[sortValue]);
+          const bValue = Number(b[sortValue]);
+          return isAscending ? aValue - bValue : bValue - aValue;
+        });
+      } else {
+        state.monthlyPayments = state.monthlyPayments.sort((a, b) => a.date.localeCompare(b.date));
+        if (!isAscending) {
+          state.monthlyPayments.reverse();
+        }
+      }
+
+      // Обновляем состояние для отслеживания текущего столбца сортировки и направления
+      state.monthlyPaymentsSortColumn = sortValue;
+      state.isAscending = isAscending;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -98,17 +136,22 @@ export const prescoringSlice = createSlice({
         if (action.payload.status !== AppStatus.PREAPPROVAL) state.selectedOffer = true;
         if (action.payload.status === AppStatus.CC_DENIED) {
           state.selectedOffer = false;
-          // localStorage.removeItem('offers');
+          localStorage.removeItem('offers');
           state.isFirstStepClose = false;
           state.isSecondStepClose = false;
-          state.status = AppStatus.CC_DENIED;
         }
-        console.log(action.payload);
+        const monthlyPayments = action.payload.credit?.paymentSchedule;
+        if (monthlyPayments) state.monthlyPayments = monthlyPayments;
+        console.log(monthlyPayments);
         state.status = action.payload.status;
         state.isLoading = false;
       });
   },
 });
 
-const { reducer } = prescoringSlice;
+const { actions, reducer } = prescoringSlice;
 export default reducer;
+
+export const {
+  monthlyPaymentsIncSort,
+} = actions;

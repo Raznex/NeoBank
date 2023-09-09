@@ -52,10 +52,12 @@ const LoanApplicationId = () => {
     }
     setTimeout(() => {
       dispatch(getStatusOffer(String(offersData[0].applicationId)));
+      if (status === AppStatus.CC_DENIED) {
+        navigate('/loan');
+      } else {
+        navigate(`/loan/${applicationId}/document`);
+      }
     }, 10000);
-    if (status === AppStatus.CC_DENIED) {
-      navigate('/loan');
-    }
   };
 
 
@@ -180,7 +182,7 @@ const LoanApplicationId = () => {
                 </article>
                 <article className="applicationID__inputs">
                   <div className="applicationID__input-box">
-                    <label htmlFor="passportIssueBranch-field" className="applicationID__lable">Your passport series
+                    <label htmlFor="passportIssueBranch-field" className="applicationID__lable">Division code
                       <span
                         className="applicationID__lable-span"
                       >*
@@ -190,16 +192,14 @@ const LoanApplicationId = () => {
                       { ...register('passportIssueBranch', {
                         required: 'The series must be 6 digits',
                         pattern: {
-                          value: /^[0-9]{6}$/,
+                          value: /^[0-9]{3}-[0-9]{3}$/,
                           message: 'The series must be 6 digits',
                         },
                       }) }
-                      type="number"
+                      type="text"
                       id="passportIssueBranch-field"
                       className="applicationID__input"
-                      min={ 0 }
-                      max={ 999999 }
-                      placeholder="000000"
+                      placeholder="000-000"
                     />
                     { /* eslint-disable-next-line no-nested-ternary */ }
                     { formState.isSubmitted ? (errors.passportIssueBranch ? (
