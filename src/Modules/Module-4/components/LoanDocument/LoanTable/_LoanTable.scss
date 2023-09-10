@@ -40,10 +40,16 @@
   }
 
   &__button {
-    width: 16px;
-    height: 16px;
+    width: 10px;
+    height: 10px;
     flex-shrink: 0;
-    padding-left: 6px;
+    margin: 0 6px;
+
+    &_down {
+      transform: rotate(180deg);
+      width: 10px;
+      height: 10px;
+    }
   }
 
 }

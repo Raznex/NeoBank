@@ -20,7 +20,6 @@ export const ApplicationServices = () => {
   };
   const postScoringStep2 = async (formData: ScoringForm, applicationId: string) => {
     const body = JSON.stringify(transformScoringData(formData));
-    console.log(body);
     const res = await request(
       `${API_URL}/application/registration/${applicationId}`,
       'PUT',
@@ -30,8 +29,30 @@ export const ApplicationServices = () => {
     );
     return res;
   };
+  const postUserDeny = async (applicationId: string) => {
+    const res = await request(`${API_URL}/application/${applicationId}/deny`, 'POST', null, { 'Content-Type': 'application/json' }, true);
+    return res;
+  };
   const getOfferStatus = async (applicationId: string) => {
     const res = await request(`${API_URL}/admin/application/${applicationId}`, 'GET', null, { 'Content-Type': 'application/json' });
+    return res;
+  };
+  const postDocument = async (applicationId: string) => {
+    const res = await request(`${API_URL}/document/${applicationId}`, 'POST', null, { 'Content-Type': 'application/json' }, true);
+    return res;
+  };
+  const postSign = async (applicationId: string) => {
+    const res = await request(`${API_URL}/document/${applicationId}/sign`, 'POST', null, { 'Content-Type': 'application/json' }, true);
+    return res;
+  };
+  const postPinCode = async (applicationId: string, code: string) => {
+    const res = await request(
+      `${API_URL}/document/${applicationId}/sign/code`,
+      'POST',
+      code,
+      { 'Content-Type': 'application/json' },
+      true,
+    );
     return res;
   };
   return {
@@ -39,6 +60,10 @@ export const ApplicationServices = () => {
     postChooseOffer,
     postScoringStep2,
     getOfferStatus,
+    postUserDeny,
+    postDocument,
+    postSign,
+    postPinCode,
   };
 };
 

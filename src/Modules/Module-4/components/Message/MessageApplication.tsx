@@ -7,7 +7,6 @@ import './_Message.scss';
 const MessageApplication = () => {
   const location = useLocation();
   const { applicationId } = useParams();
-  console.log(applicationId);
   return (
     <div className="message">
       <p className={ `${location.pathname === `/loan/${applicationId}/document` ? 'message__title' : 'message__title_hidden'}` }>Documents are formed</p>

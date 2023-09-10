@@ -104,6 +104,14 @@
       opacity: 0.6;
       cursor: pointer;
     }
+    &_disabled {
+      background: #999999;
+
+      &:hover {
+        opacity: 1;
+        cursor: default;
+      }
+    }
   }
 }
 

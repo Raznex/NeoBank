@@ -45,6 +45,11 @@ export interface ScoringForm {
   workExperienceCurrent: number;
 }
 
+export interface IPostCode {
+  applicationId: string;
+  code: string;
+}
+
 export interface IPostScoring {
   data: ScoringForm;
   applicationId: string;

@@ -95,5 +95,10 @@
     &_cancel {
       background: var(--blue-3, #003CFF);
     }
+
+    &_switch {
+      background: var(--blue-3, #003CFF);
+      width: 128px;
+    }
   }
 }

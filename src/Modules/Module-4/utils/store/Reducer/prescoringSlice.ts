@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 
-import { FormPrescording, IPostScoring, Offer, Payment } from '../../../../Module-3/utils/Interface';
+import { FormPrescording, IPostCode, IPostScoring, Offer, Payment } from '../../../../Module-3/utils/Interface';
 import ApplicationServices from '../../Api/ApplicationService';
 import { AppStatus, SortValue } from '../../Options/Enum';
 
@@ -67,6 +67,42 @@ export const getStatusOffer = createAsyncThunk(
   },
 );
 
+export const denyUser = createAsyncThunk(
+  'prescoringSlice/denyUser',
+  async (applicationId: string) => {
+    const { postUserDeny } = ApplicationServices();
+    const response = await postUserDeny(applicationId);
+    return response;
+  },
+);
+
+export const postCreateDocument = createAsyncThunk(
+  'prescoringSlice/postCreateDocument',
+  async (applicationId: string) => {
+    const { postDocument } = ApplicationServices();
+    const response = await postDocument(applicationId);
+    return response;
+  },
+);
+
+export const postSignUser = createAsyncThunk(
+  'prescoringSlice/postSignUser',
+  async (applicationId: string) => {
+    const { postSign } = ApplicationServices();
+    const response = await postSign(applicationId);
+    return response;
+  },
+);
+
+export const postCode = createAsyncThunk(
+  'prescoringSlice/postCode',
+  async ({ applicationId, code }: IPostCode) => {
+    const { postPinCode } = ApplicationServices();
+    const response = await postPinCode(applicationId, code);
+    return response;
+  },
+);
+
 const checkSortValue = (sortValue: SortValue) => {
   if (sortValue === SortValue.NUMBER
     || sortValue === SortValue.TOTAL_PAYMENT
@@ -84,24 +120,25 @@ export const prescoringSlice = createSlice({
   reducers: {
     monthlyPaymentsIncSort: (state, action) => {
       const sortValue: SortValue = action.payload;
-      const isAscending = state.monthlyPaymentsSortColumn === sortValue ? !state.isAscending : true; // Флаг направления сортировки
 
+      if (state.monthlyPaymentsSortColumn !== sortValue) {
+        state.isAscending = false;
+      } else {
+        state.isAscending = !state.isAscending;
+      }
       if (checkSortValue(sortValue)) {
         state.monthlyPayments = state.monthlyPayments.sort((a, b) => {
           const aValue = Number(a[sortValue]);
           const bValue = Number(b[sortValue]);
-          return isAscending ? aValue - bValue : bValue - aValue;
+          return state.isAscending ? aValue - bValue : bValue - aValue;
         });
       } else {
         state.monthlyPayments = state.monthlyPayments.sort((a, b) => a.date.localeCompare(b.date));
-        if (!isAscending) {
+        if (!state.isAscending) {
           state.monthlyPayments.reverse();
         }
       }
-
-      // Обновляем состояние для отслеживания текущего столбца сортировки и направления
       state.monthlyPaymentsSortColumn = sortValue;
-      state.isAscending = isAscending;
     },
   },
   extraReducers: (builder) => {
@@ -142,9 +179,41 @@ export const prescoringSlice = createSlice({
         }
         const monthlyPayments = action.payload.credit?.paymentSchedule;
         if (monthlyPayments) state.monthlyPayments = monthlyPayments;
-        console.log(monthlyPayments);
         state.status = action.payload.status;
         state.isLoading = false;
+      })
+      .addCase(denyUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(denyUser.fulfilled, (state) => {
+        state.isLoading = false;
+        state.isSecondStepClose = false;
+        state.isFirstStepClose = false;
+        state.status = AppStatus.CLIENT_DENIED;
+        localStorage.removeItem('offers');
+      })
+      .addCase(postCreateDocument.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(postCreateDocument.fulfilled, (state) => {
+        state.status = AppStatus.DOCUMENT_CREATED;
+        state.isLoading = false;
+        localStorage.setItem('documentCreated', 'Документ сформирован');
+      })
+      .addCase(postSignUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(postSignUser.fulfilled, (state) => {
+        state.isLoading = false;
+        localStorage.setItem('documentSigning', 'Документ отправлен');
+      })
+      .addCase(postCode.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(postCode.fulfilled, (state) => {
+        state.isLoading = false;
+        state.status = AppStatus.CREDIT_ISSUED;
+        localStorage.setItem('code', 'Код подтвержден');
       });
   },
 });
