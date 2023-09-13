@@ -1,0 +1,72 @@
+.congratulation {
+  font-family: Ubuntu, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin: 40px 0 96px;
+
+  &__image {
+    width: 150px;
+    height: 150px;
+  }
+
+  &__title {
+    color: #1C1C1E;
+    text-align: center;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 44px;
+  }
+
+  &__text {
+    color: #4F5665;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  &__link {
+    border-radius: 16px;
+    background: var(--blue-3, #003CFF);
+    color: var(--White, #FFF);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0.32px;
+    padding: 16px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .congratulation {
+    gap: 16px;
+
+    &__image {
+      width: 130px;
+      height: 130px;
+    }
+
+    &__title {
+      font-size: 22px;
+      line-height: 28px;
+    }
+
+    &__text {
+      font-size: 13px;
+      line-height: 19px;
+    }
+
+    &__link {
+      font-size: 13px;
+      line-height: 15px;
+      padding: 10px;
+      border-radius: 12px;
+    }
+  }
+}

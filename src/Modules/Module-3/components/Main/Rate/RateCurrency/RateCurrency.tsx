@@ -1,14 +1,15 @@
 import React from 'react';
+
 import '../_Rate.scss';
+import { CurrencyData } from '../../../../utils/Interface';
+
 
 interface RateProps {
-  currency: any;
+  curr: CurrencyData;
 }
 
-const RateCurrency:React.FC <RateProps>= ({currency}) => {
-  return (
-      <p className="rate__currency">{currency.currency}: <span className="rate__currency rate__currency_span" id="rateUSD">{currency.value}</span></p>
-  );
-};
+const RateCurrency: React.FC <RateProps> = ({ curr }) => (
+  <p className="rate__currency">{ curr.currency }: <span className="rate__currency rate__currency_span" id="rateUSD">{ curr.value }</span></p>
+);
 
 export default RateCurrency;

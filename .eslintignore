@@ -1,0 +1,12 @@
+node_modules
+*/**/node_modules
+*.spec.ts
+*.html
+dist
+webpack.config.js
+setupTests.ts
+server
+vendor
+/src/common/assets/icon/
+/src/Modules/Module-1
+/src/Modules/Module-2

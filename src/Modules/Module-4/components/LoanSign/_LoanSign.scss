@@ -1,0 +1,168 @@
+.loan-sign {
+  font-family: Ubuntu, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin: 104px 0 96px;
+
+  &__lid {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__title {
+    color: #1C1C1E;
+    text-align: left;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 33px;
+  }
+
+  &__steps {
+    color: #000;
+    text-align: left;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    margin-left: 120px;
+  }
+
+  &__info {
+    color: #4F5665;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    margin: 32px 0;
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  &__download {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+  }
+
+  &__agree {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 16px;
+  }
+
+  &__input {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__label {
+    color: #1A202C;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    padding-left: 16px;
+    margin-right: 80px;
+    user-select: none;
+  }
+
+  &__button {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-feature-settings: 'salt' on, 'liga' off;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0.32px;
+    width: 160px;
+    height: 40px;
+    padding: 8px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: var(--blue-3, #003CFF);
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out 0.1s;
+
+    &:hover {
+      opacity: 0.6;
+      cursor: pointer;
+    }
+    &_disabled {
+      background: #999999;
+
+      &:hover {
+        opacity: 1;
+        cursor: default;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .loan-sign {
+    margin: 60px 0 96px;
+
+    &__title {
+      font-size: 25px;
+      line-height: 28px;
+    }
+
+    &__steps {
+      font-size: 14px;
+      line-height: 16px;
+      margin-left: 80px;
+    }
+
+    &__info {
+      font-size: 16px;
+      line-height: 18px;
+      margin: 24px 0;
+    }
+
+    &__icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    &__download {
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    &__input {
+      width: 16px;
+      height: 16px;
+    }
+
+    &__label {
+      font-size: 15px;
+      line-height: 17px;
+      padding-left: 12px;
+      margin-right: 60px;
+    }
+
+    &__button {
+      font-size: 13px;
+      line-height: 15px;
+      width: 120px;
+      padding: 8px;
+    }
+  }
+}
