@@ -15,9 +15,22 @@ import LoanCode from '../../../Module-4/components/LoanCode/LoanCode';
 
 const App = () => (
   <>
-    <Header />
     <main className="content">
+      <a
+        className="App-link"
+        href="https://reactjs.org"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Learn React
+      </a>
       <Routes>
+        <Route
+          path="*"
+          element={ (
+            <Header />
+          ) }
+        />
         <Route
           path="/"
           element={ (
